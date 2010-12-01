@@ -1,0 +1,74 @@
+%
+% Datei: Studium/Diplomarbeit.tex
+%
+% Begonnen am: 18/01/97
+%
+\documentclass[twoside,12pt,a4paper]{report}
+\usepackage[latin1]{inputenc}
+\usepackage[english,german]{babel}
+\usepackage[T1]{fontenc}
+
+% Computer Concrete Fonts verwenden
+%\usepackage{ccfonts}
+\usepackage{times,mathptm}
+
+\usepackage{typearea}\typearea[2cm]{14}
+
+\makeatletter
+\renewcommand\normalsize{%
+   \@setfontsize\normalsize\@xivpt{18}%
+   \abovedisplayskip 14\p@ \@plus3\p@ \@minus7\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}
+\renewcommand\small{%
+   \@setfontsize\normalsize\@xiipt{14.5}%
+   \abovedisplayskip 12\p@ \@plus3\p@ \@minus7\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}
+
+\normalsize
+\makeatother
+
+% Häufig benötigte Worte/Floskeln
+\newcommand{\aug}{\ifmmode{\mathrm{AuGa}_2}\else{AuGa$_2$}\fi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sloppy
+
+\pagestyle{empty}
+
+\begin{document}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1ex}
+
+\phantom{asdf}
+\newpage
+\phantom{asdf}
+\begin{center}
+ \vspace{1cm}
+\large
+{\Huge\bfseries Magnetische Kernspinresonanz\\[1cm]
+ an \aug\\[1cm]
+ bei tiefen Temperaturen\\[3cm]}
+
+{\Large\bf  Diplomarbeit}\vspace{2cm}\\
+
+vorgelegt\\
+von\\
+Andreas Würl\vspace{1cm}\\
+Universit"at Bayreuth\\
+Lehrstuhl Experimentalphysik V\vspace{1cm}\\
+eingereicht am 2. März 1998 \vspace{1cm}\\
+1. Gutachter: Prof. Dr. G. Eska \\
+2. Gutachter: Prof. Dr. E. Rössler \vspace{1cm}\\
+\vfill
+Bayreuth, 1998
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

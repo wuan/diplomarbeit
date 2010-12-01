@@ -1,0 +1,951 @@
+\chapter{NMR"=Messungen an \aug}
+\section{Herstellung und Charakterisierung der \aug"=Probe}
+
+Die Kristallstruktur des \aug{} entspricht dem CaF$_2$"=Gitter und ist in Abbildung~\ref{fig:auga2}
+dargestellt. Die Galliumatome besetzen darin ein einfach kubisches Untergitter. Deswegen ist die
+bei reinem Gallium mit seiner orthorhombischen Struktur auftretende starke Quadrupolaufspaltung bei
+Gallium in \aug{} unterdrückt.
+
+\begin{figure}[htp]
+	$$\includegraphics{drawings/auga2}$$
+	\caption[Das Kristallgitter von AuGa$_2$]{{\upshape\bfseries Das Kristallgitter von \aug.} Die kleineren Galliumatome bilden im
+		kubisch flächenzentrierten Gitter der Goldatome ein einfach kubisches Untergitter. Die
+		Gitterkonstante beträgt 6.075Å und in einer Elementarzelle befinden sich 8 Gallium"= und 4
+		Goldatome}
+	\label{fig:auga2}
+\end{figure}
+
+\newcommand{\khzpmt}{\ensuremath{\left[\frac{\mathrm{kHz}}{\mathrm{mT}}\right]}}
+{\setlength{\tabcolsep}{0.2em}
+\begin{table}
+	$$\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+		\hline
+		Isotop		& $\gamma$	& $\K$	& $\gamma(1+\K)$	& $I$	& Häufigkeit	& $\mu$ &$T_\mathrm{el}T_1$	& $T_2$\\
+					& \khzpmt	& [\%]		& \khzpmt		&		& [\%]			&[$\mu_N$]		&[Ks]	& [$µ$s]\\\hline\hline
+		$^{63}$Cu	& 11.285	& 0.238		& 11.312		& 3/2	& 69.17			& 2.2206	& 1.27	& 150\\
+		$^{65}$Cu	& 12.089	& 0.238		& 12.118		& 3/2	& 30.83			& 2.3791	& 1.09	& 150\\\hline
+		\ga			& 10.219	& 0.132		& 10.232		& 3/2	& 60.1			& 2.0108	& 1.008	& 320\\
+		\gb			& 12.984	& 0.132		& 13.001		& 3/2	& 39.9			& 2.5549	& 0.630	& 260\\\hline
+		$^{197}$Au	& 0.72919	& 1.65		& 0.7412		& 3/2	& 100			& 0.14349 	& 4.6	& ---\\\hline
+	\end{tabular}$$
+	\caption[NMR"=spezifische Parameter der reinen Metalle]{{\upshape\bfseries NMR"=spezifische
+			Parameter der reinen Metalle Kupfer, Gallium und Gold.} Werte entnommen aus \cite{Metallic,Valic}}
+\end{table}}
+
+Die Atommassen der reinen Komponenten Gallium und Gold sind $m_\mathrm{Ga}=69.723$u und
+$m_\mathrm{Au}=196.967$u. Daraus ergibt sich für die Dichte von \aug{}:
+	\begin{equation}
+		\rho_\aug=
+			\frac{8m_\mathrm{Ga}+4m_\mathrm{Au}}{6.022\cdot10^{26}\frac{\mathrm{u}}{\mathrm{kg}}}
+				\frac1{\left(6.075\cdot10^{-10}\mathrm{m}\right)^3}
+			= 9966.7 \frac{\mathrm{kg}}{\mathrm{m}^3}
+	\end{equation}
+Die Gewichtsanteile der Bestandteile Gold und Gallium an der Verbindung
+\aug{} bestimmt man aus den Atommassen zu 41.451\% Gallium und 58.549\% Gold.
+
+Das Gefäß zum Einschmelzen der Ausgangselemente besteht aus einer an ein Quarzglasrohr mit 9 mm
+Innendurchmesser angeschmolzenen 2 cm langen Quarzglaskapillare mit einem Innendurchmesser von 3
+mm. Damit diese Kapillare, die später als Form für die Gold"=Gallium"=Schmelze dient, vollständig
+mit \aug{} gefüllt werden kann, sind ungefähr 2 g davon nötig. Es wurde nun die entsprechende Menge
+von 1.1805 g 5N$^+$ Gold und 0.8350 g 6N$^+$ Gallium (Sollwert nach den stöchiometrischen Gewichtsanteilen:
+0.8357 g) zusammen in das Quarzglasrohr eingebracht, welches anschließend mit einer
+Drehschieberpumpe evakuiert und zugeschmolzen wurde. Nun wurden die Komponenten im liegenden
+Quarzglasrohr 22 Stunden lang bei 550°C eingeschmolzen. Der Schmelzpunkt von \aug{} liegt bei etwa
+496°C. Obwohl der Schmelzpunkt von Gold bei 1064°C liegt, löst es sich bei einer Temperatur von
+550°C im bereits bei 30°C schmelzenden Gallium. Danach wurde das flüssige Gold"=Gallium"=Gemisch
+durch Aufstellen des Quarzglasrohres in die als Probenform dienende Quarzglaskapillare eingefüllt
+und zuerst in 24 Stunden auf 360°C, dann in 38 Stunden auf 120°C und schließlich bis zur
+Raumtemperatur abgekühlt.
+
+\subsection{Das Restwiderstandsverhältnis}
+
+Das Restwiderstandsverhältnis (\ul{r}esidual \ul{r}esistivity \ul{r}atio, RRR) läßt Rückschlüsse auf die
+Stärke der Streuung von Elektronen an Verunreinigungen und Gitterdefekten bei tiefen Temperaturen
+zu. Bei der Streuung an Verunreinigungen muß man folgende Fälle unterscheiden:
+
+\begin{figure}[htp]
+	\begin{center}
+		\subfigure[bei Raumtemperatur / in flüssigem N$_2$]{
+			$$\includegraphics[angle=-90,width=\bigwidth]{plots/rrr1}$$}
+		\hspace{1em}
+		\subfigure[in flüssigem $^4$He]{
+			\label{fig:rrr2}
+			$$\includegraphics[angle=-90,width=\bigwidth]{plots/rrr2}$$}
+		\caption[Messung des Restwiderstandsverhältnisses]{{\upshape\bfseries Messung des Restwiderstandsverhältnisses der \aug"=Probe}
+			mit Hilfe der 4"=Punkt Methode. Aufgetragen ist der gemessene Spannungsabfall an der
+			Probe über den durch die Probe fließenden Strom. Der auftretende Spannungsoffset bei
+			der Messung kommt durch auftretende Thermospannungen zustande. Dies hat jedoch keinen
+			Einfluß auf das Meßergebnis, da die Steigung der Geraden $U(I)=R\cdot I$ ausgewertet
+			wird.}
+		\label{fig:rrr}
+	\end{center}
+\end{figure}
+
+\begin{description}
+	\item[die Streuung an nichtmagnetischen Verunreinigungen:] Die Leitungselektronen werden durch
+		das Coulombpotential der Verunreinigung gestreut, sie sehen den Unterschied $\Delta$Z der
+		Kernladungszahl des Verunreinigungsatoms. Die Vergrößerung des Widerstandes ist
+		nicht sehr groß und für kleine Konzentrationen der Verunreinigung gilt das Gesetz von
+		Linde:
+		\begin{equation}
+			\Delta\rho = a + b(\Delta\mathrm{Z})^2
+		\end{equation}
+		Wobei die Konstanten $a$ und $b$ vom jeweiligen Hauptbestandteil des Metalls abhängen.
+
+	\item[die Streuung an magnetischen Verunreinigungen:] Eine Streuung mit Spinübergängen kann an
+		den lokalisierten Momenten der Verunreinigungsatome erfolgen. Hierbei ist die Erhöhung
+		des Widerstandes in der Regel wesentlich stärker als im Fall von nichtmagnetischen
+		Verunreinigungen. Die Stärke der Streuung und die daraus resultierende Erhöhung des
+		Widerstandes ist stark von den Eigenschaften der Verunreinigungsatome und des
+		Gastgitters abhängig. Sie kann aufgrund des auftretenden
+		Kondo"=Effektes\footnote{eine verstärkte inelastische Streuung einer Wolke von
+		Leitungselektronen in der Nähe eines Verunreinigungsatomes mit magnetischen Moment,
+		welches dadurch von den Leitungselektronen temperaturabhängig nach außen abgeschirmt wird}
+		eine starke Temperaturabhängigkeit besitzen.
+\end{description}
+
+Für die Widerstände der \aug"=Probe ergeben sich aus der Messung in Abbildung~\ref{fig:rrr} folgende Werte
+	$$\begin{tabular}{|r|c|}\hline
+		T / [K]	& R / [m$\Omega$]\\\hline\hline
+		300 K	& $112.2\pm1.4$\\
+		77	K	& $20.25\pm0.12$\\
+		4.2 K	& $0.5418\pm0.020$\\\hline
+	\end{tabular}$$
+Daraus folgt für das Restwiderstandsverhältnis der untersuchten Probe:
+	\begin{equation}
+		\mathrm{RRR}=\frac{R_\mathrm{300K}}{R_\mathrm{4.2K}}
+			=\frac{112.2\pm1.4\,\mathrm{m}\Omega}{0.5418\pm0.020\,\mathrm{m}\Omega}=207.1\pm8.1
+	\end{equation}
+
+\subsection{Die statische Suszeptibilität}
+
+Die Messung des magnetischen Moments der \aug"=Probe im Temperaturbereich 4.2~K $\le$ T $\le $300~K
+im statischen Feld B=0.5~T dient zur Untersuchung der elektronischen magnetischen Eigenschaften
+sowie der magnetischen Verunreinigungen der Probe.
+
+ \begin{figure}[htp]
+	\begin{center}
+		\subfigure[Der Verlauf der statischen Suszeptibilität im gemessenen Temperaturbereich]{
+			\label{fig:suszept}
+			$$\includegraphics[angle=-90,width=\bigwidth]{plots/suszept1}$$}\\
+		\subfigure[magn. Moment nach Abzug des diamagnetischen Anteils bei tiefen Temperaturen]{
+			\label{fig:suszept2}
+			$$\includegraphics[angle=-90,width=\bigwidth]{plots/suszept2}$$}
+	\caption[Messung der statischen Suszeptibilität]{{\upshape\bfseries Messung der statischen Suszeptibilität von \aug{}} bei einem
+		Magnetfeld $B=0.5$T im Temperaturbereich von 300 K bis 4.2K. Die Gerade
+		$f(x)=(-0.1\pm0.6)\frac1{T}$ repräsentiert die Anpassung der Tieftemperaturdaten an das
+		Curie"=Gesetz, zur Bestimmung der Größenordnung der magnetischen Verunreinigungen in der Probe}
+	\end{center}
+ \end{figure}
+
+Diese Messung wurde mit einem kommerziellen SQUID"=Magnetometer an einem zylindrischen Teil der
+gewonnenen \aug"=Probe der Masse 0.3041~g im Temperaturbereich von 4.2~K bis zur Raumtemperatur bei
+einem statischen Magnetfeld $B=0.5$~T durchgeführt.
+
+Aus der gemessenen Magnetisierung kann man die Konzentration $x_\mathrm{mag}$, das effektive Moment
+$N_\mathrm{eff}$ sowie die Spinquantenzahl $S$ von verdünnten also von nur schwach
+wechselwirkenden magnetischen Verunreinigungen bestimmen.
+
+Die Magnetisierung eines Systems elektronischer magnetischer Momente läßt sich durch die
+Brillouinfunktion \eqref{eqn:brillouin} beschreiben:
+	\begin{equation}
+		\label{eqn:suszept}
+		M = \frac{x_\mathrm{mag}N_0\mu}{V_\mathrm{mol}}B_s(x)\ttextt{mit}
+			x=\frac{\mu\,B}{k_B\,T}\ttextt{und}\mu=\mu_Bg_eS
+	\end{equation} 
+Für $x\gg1$ sättigt die Magnetisierung und $M$ geht gegen $M_\mathrm{sat}$. Das effektive magnetische Moment
+ist dabei $N_\mathrm{eff}\mu_B=g_e\sqrt{S(S+1)}\mu_B$. Aus der gemessenen Magnetisierungskurve
+$M(T,B)$ können $x_\mathrm{mag}$, $N_\mathrm{eff}(g_e,S)$ und $S$ mit Hilfe von \eqref{eqn:suszept}
+unabhängig voneinander bestimmt werden, wenn die Magnetisierung sättigt.
+
+
+Um nun die Konzentration kernmagnetischer Verunreinigungen zu bestimmen, subtrahiert man von der
+gemessenen Suszeptibilität den diamagnetischen Anteil der Elektronen, der in
+Abbildung~\ref{fig:suszept} mit seinem, durch die Brillouinfunktion gegebenen Verlauf dominiert.
+Nun betrachtet man den Verlauf der Suszeptibilität bei tiefen Temperaturen.
+
+Da man sich für T > 4.2~K nur im Gültigkeitsbereich des Curie"=Gesetzes für kernmagnetische Verunreinigungen
+befindet, ist es nicht möglich, die Daten aus Abbildung~\ref{fig:suszept2} an
+Gleichung~\eqref{eqn:suszept} anzupassen. Aus einer Anpassung an das Curie"=Gesetz, für das sich bei
+Auftragung über $1/T$ in Abbildung~\ref{fig:suszept2} eine Gerade ergibt, erhält man nach
+	\begin{equation}
+		\label{eqn:suszept2}
+		M = \frac{C}{\mu_0V_\mathrm{mol}}\frac{B}{T} \ttextt{mit}
+			C=\frac{x_\mathrm{mag}N_0\mu_0\mu_B^2g_e^2S(S+1)}{3k_B}
+	\end{equation}
+nur den Faktor $x_\mathrm{mag}\cdot N_\mathrm{eff}^2$. Allerdings muß man, um $x_\mathrm{mag}$
+daraus bestimmen zu können, einen plausiblen Wert für das effektive magnetische Moment der
+Verunreinigungsatome $N_\mathrm{eff}$ annehmen.
+
+Für die Messung an der \aug"=Probe ergibt sich für $N_\mathrm{eff}=5$ (nach \cite{Doofi}) eine Obergrenze
+für die magnetischen Verunreinigungen von $x_\mathrm{mag}< 1$~ppm. Dies stellt bei einem
+Feld von 0.5 T die Auflösungsgrenze des verwendeten Suszeptometers dar. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Der Versuchsaufbau}
+
+\subsection{Der Kryostat}
+ \begin{figure}[htp]
+	$$\includegraphics[width=0.6\textwidth]{drawings/kryo}$$
+	\caption[Schematische Darstellung des Kryostaten WODAN]{{\bfseries\upshape Schematische Darstellung des Kryostaten WODAN}. Gezeigt sind nur die
+		Bereiche, die auf Mischkammertemperatur ($T > 4$~mK) und tiefer
+		($T_\mathrm{minimal}\approx0.2$~mK) abgekühlt werden. Zusätzlich ist noch das
+		für die Kühlung durch adiabatische Entmagnetisierung und die NMR"=Experimente wichtige
+		Magnetsystem abgebildet, das sich im Heliumbad des Kryostaten befindet.}
+	\label{fig:Kryostat}
+ \end{figure}
+
+Die Messungen in der vorliegenden Arbeit wurden mit gepulster NMR am Kryostaten "`WODAN"' 
+durchgeführt (siehe Abbildung~\ref{fig:Kryostat}). Die Basis des Kryostaten bildet ein
+$^3$He"=$^4$He"=Entmischungskühler der Firma \emph{Oxford Instruments GmbH}, der um eine,
+mittels supraleitenden Indium"=Wärmeschaltern abkoppelbare
+Kupfer"=Entmagnetisierungsstufe mit Experimentenplatte und NMR Hochfeldmeßplatz
+erweitert wurde. Eine genaue Beschreibung von Aufbau und Funktion des Kryostaten befindet sich in
+der Dissertation von Thomas Wagner \cite{Wagner_Dis}.
+
+\subsection{Das Puls"=NMR"=Spektrometer}
+ \begin{figure}[htp]
+	$$\includegraphics{drawings/NMR-Setup}$$
+%	$$\includegraphics[bb=0 0 536 250,width=0.9\textwidth]{drawings/NMR-Setup.eps}$$
+	\caption[Schematischer Aufbau des Puls"=NMR"=Spektrometers]{{\upshape\bfseries Schematischer Aufbau des Puls"=NMR"=Spektrometers.}}
+	\label{fig:NMR-Spektrometer}
+ \end{figure}
+
+Das für die Messungen verwendete NMR"=Spektrometer (Aufbauschema in
+Abbildung~\ref{fig:NMR-Spektrometer}) ist aus Gründen der Flexibilität aus Einzelkomponenten
+zusammengestellt und besitzt folgende Eigenschaften:
+	\begin{itemize}
+		\item Der mögliche Frequenzbereich erstreckt sich von 100 kHz bis zu 200 MHz.
+		\item Es können aufeinanderfolgende Pulse mit \emph{starrer Phase} aufgenommen werden, was die
+			Mittelung über mehrere aufgenommene FIDs zur Verbesserung des
+			Signal"=Rausch"=Verhältnisses ermöglicht.
+		\item Die verwendeten Analog"=Gates besitzen eine \emph{hohe Sperrdämpfung} von über 90 dB.
+			Zusammen mit den antiparallelen Diodenpärchen nach dem Leistungsverstärker wird so
+			gewährleistet, daß nur der verstärkte Puls und kein Rauschen oder
+			Rest"=Hochfrequenzschwingung zur Probenspule gelangt.
+		\item Zur Signaldetektion können wahlweise \emph{breitbandige} oder auf die zu verstärkende
+			Frequenz \emph{abstimmbare Signalverstärker} mit kurzer Totzeit (typisch $\approx 5µ$s)
+			verwendet werden.
+		\item Eine weitere Verbesserung des Signal"=Rausch"=Verhältnisses erhält man durch
+			Anpassung der Kabellängen nach \cite[S. 25f]{Micha_Dis} an die verwendete Pulsfrequenz.
+	\end{itemize}
+Eine ausführliche Beschreibung des verwendeten Spektrometers befindet sich in \cite{Wagner_Dis} und
+\cite{Sigi_Dis}.
+
+\subsubsection{Thermometrie}
+Zur Thermometrie im Temperaturbereich von 0.2~mK bis zu 100~mK stehen zwei Thermometer zur
+Verfügung. Zum einen ein \emph{Palladium"=Eisen Suszeptibilitätsthermometer}, das den
+Temperaturbereich von 8 mK bis 100 mK abdeckt. Mit Hilfe dieses
+PdFe"=Suszeptibilitätsthermometers ist es möglich, die Temperatur der
+Experimentenplatte über einen Temperaturregler mit angeschlossenem Heizwiderstand zu
+stabilisieren. Für Messungen von Temperaturen ab 100 mK bis herunter zu dem mit dem Kryostaten
+minimal erreichbaren Wert von 0.2~mK wurde das \emph{Platin"=NMR"=Thermometer} verwendet. Da
+beide Thermometer keine absoluten Thermometer sind, ist eine Eichung auf die supraleitenden
+Übergänge eines Wolfram"=Fixedpointdevices bei 17 mK und 62 mK möglich.
+
+\subsection{Die NMR"=Probe}
+ \begin{figure}[htp]
+	$$\includegraphics{drawings/probe}$$
+%	$$\includegraphics[bb=0 0 408 208]{drawings/probe.eps}$$
+	\caption[Skizze der AuGa$_2$ NMR"=Probe]{{\upshape\bfseries Die \aug{} NMR"=Probe.} Der Probenhalter wird mit dem M3"=Gewinde
+		in die NMR"=Experimentenplatte im Hochfeldbereich des unteren Hauptmagneten eingeschraubt.
+		Die Anschlüsse der NMR"=Spule werden an ein dort vorhandenes Koax"=Terminal angelötet.
+		Von dort aus führt ein Koaxialkabel direkt zum Probenrelais (siehe
+		Abb.~\ref{fig:NMR-Spektrometer}). Die Pfeile geben die Richtungen der am Probenort
+		wirkenden Magnetfelder und die Lage der in dieser Arbeit verwendeten Koordinatenachsen
+		an.}
+	\label{fig:probe}
+ \end{figure}
+
+Bevor die \aug"=Probe in den Probenhalter eingesetzt wurde, ist überprüft worden, daß \aug{} mit
+dem als "`Lot"' zu verwendendem Gallium kein Eutektikum bildet. Hierzu wurde Gallium (Schmelzpunkt
+30°C) durch Bestrahlung mit einer Glühlampe erwärmt und verflüssigt und ein kleines Stück \aug{}
+damit benetzt. Nach einer Einwirkungszeit von einer halben Stunde mit ständiger Erwärmung des
+Galliums und des \aug{} wurde nach Entfernen des flüssigen Galliums keine wahrnehmbare Veränderung
+an dem \aug{} Testmaterial festgestellt.
+
+Nun wurde die NMR"=Probe, ein zylindrisches Stück \aug{}, an dem Ende, das mit dem Probenhalter aus
+Silber verbunden werden sollte, mit flüssigem Gallium benetzt. Die Bohrung des Probenhalters wurde
+danach ebenso behandelt. Schließlich wurde die NMR"=Probe mit der mit
+Gallium benetzten Seite in die Bohrung des Probenhalters eingesteckt und im Kühlschrank gelagert,
+damit sich das Gallium"=Lot wieder verfestigt.
+
+Zwischen NMR"=Spule und \aug"=Probe wurde eine 12~$µ$m dicke Kapton"=Folie mit GE"=Varnish
+auf die Mantelseite der Probe geklebt. Die NMR"=Spule, die aus isoliertem Kupferdraht mit 50 $µ$m
+Durchmesser (Drahtradius 15~$µ$m mit einer Lack"=Isolationsschicht von 10~$µ$m) besteht, wurde dann
+auf die Kaption"=Folie gewickelt. Auf der zur Verfügung stehenden Länge der Kapton"=Folie befinden
+sich 105 Spulenwindungen. Schließlich wurde die Spule noch mit GE"=Varnish fixiert und die
+Anschlußdrähte verdrillt.
+
+Der Einbau der Probe erfolgte auf der NMR"=Experimentenplatte, die sich, wie aus
+Abbildung~\ref{fig:Kryostat} ersichtlich im Bereich des unteren Hauptmagneten befindet. Der Probenträger wurde
+in die auf der Experimentenplatte befindlichen M3"=Gewinde eingeschraubt. Die Anschlußdrähte wurden
+zur Verhinderung von elektrischen Kontakten in einem Schlauch aus Glasfasergeflecht bis zum
+Anschluß an die vorhandenen Koaxialkabel an der Experimentenplatte geführt und dort angelötet.
+Der Glasfaserschlauch wurde schließlich auf der ganzen Länge fixiert.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{NMR"=Messungen}
+
+\subsection{Messung der Spin"=Gitter Relaxationzeit T$_1$}
+
+\subsubsection{Grundlagen}
+
+Unter den Annahmen 
+	\begin{itemize}
+		\item $\vec B_\mathrm{eff}\parallel\vec B_0$, da daß äußere Magnetfeld $\abs{\vec B_0}$
+			viel größer als die Beiträge der inneren Felder $\abs{\mu_0\left(\vec
+			D+\vec\lambda\right)\vec M}$ ist.
+		\item $t\gg T_2$ d.\ h.\ nach erfolgter vollständiger Relaxation der
+			zur $z$"=Richtung senkrechten Komponenten der Magnetisierung der Probe ($M_x=0$ und
+			$M_y=0$) (siehe dazu auch Abbildung~\ref{fig:relaxation}).
+	\end{itemize}
+folgt für die $z$"=Komponente der Magnetisierung $M_z$ für den freien Induktionszerfall nach
+Pulsende eine einfache Differentialgleichung. Sie beinhaltet nun nur noch den Term der Spin"=Gitter
+Relaxation:
+	\begin{equation}
+		\dot M_z=-\frac{M_0-M_z}{T_1}
+	\end{equation}
+
+\begin{figure}[htp]
+	$$\includegraphics{drawings/relaxation}$$
+%	$$\includegraphics[bb=0 0 277 77,scale=1.44]{drawings/Relaxation.eps}$$
+	\caption[Schema der Kernspinrelaxation in Metallen]{{\upshape\bfseries Schema der Kernspinrelaxation in Metallen ($T_2 \ll T_1$)}. Dargestellt ist
+		das Verhalten des Vektors der makroskopisch meßbaren Magnetisierung $\vec M$ der Probe im
+		Laborsystem, wie es durch die Blochgleichung \eqref{eqn:bloch} vorgegeben wird.
+		$M_\perp=\sqrt{M_x^2+M_y^2}$ stellt den Betrag der Komponente der Magnetisierung dar, die
+		senkrecht zur $z$"=Richtung ist. Diese Komponente $M_\perp$ relaxiert nach der Auslenkung
+		von $\vec M$ durch den HF"=Puls aufgrund der Dephasierung der einzelnen Spins mit der
+		Konstante $\frac1{T_2}$ auf Null zurück (\emph{Spin"=Spin Relaxation}), der langsamere
+		Energieaustausch zwischen dem Spinsystem und dem Wärmebad der Leitungselektronen findet
+		für $t\gg T_2$ statt, währenddessen sich die Spintemperatur mit der Zeitkonstante
+		$\frac1{T_1}$ der Temperatur der Leitungselektronen annähert
+		(\emph{Spin"=Gitter Relaxation}).}
+	\label{fig:relaxation}
+\end{figure}
+
+Nach dieser Differentialgleichung für $M_z$ ergibt sich mit den Randbedingungen
+	\begin{equation}
+		\lim_{t\rightarrow\infty}M_z(t)=M_0 \ttextt{und} M_z(t=0)=M_{z0} \ttextt{mit}\abs{M_{z0}}<M_0
+	\end{equation}
+ein exponentieller Abfall von $M_z$ auf den Wert der Magnetisierung im thermischen Gleichgewicht
+mit dem Wärmebad $M_0=M_\mathrm{sat}P\left(\frac{B}{T}\right)$ hin:
+	\begin{equation}
+		\label{eqn:mzdecay}
+		M_z(t) = M_0 - \bigl(M_0-M_{z0}\bigr)\exp\left\{-\frac{t}{T_1}\right\}
+	\end{equation}
+Für einen beliebigen Tippingwinkel $\theta$ ergibt sich für die Werte der Magnetisierung parallel
+und senkrecht zum äußeren Magnetfeld $B_0$ nach dem ersten HF"=Puls (zur Zeit $t=0$):
+	\begin{align}
+		M_z(t=0) &= M_0\cos\theta\\
+		M_0 \propto M_\perp(t=0) &= \sqrt{\left.M_x(t=0)\right.^2+\left.M_y(t=0)\right.^2} = M_0\sin\theta\label{eqn:t1_m0}
+	\end{align}
+Dieser erste HF"=Puls dient dazu, das Spinsystem definiert aus dem Gleichgewicht auszulenken. Mit Hilfe
+des zweiten HF"=Pulses ist es dann möglich, die momentane zeitliche Entwicklung der Relaxation der
+$z$"=Komponete der Magnetisierung abzufragen.
+
+Für die zeitliche Entwicklung von $M_z$ nach dem ersten HF"=Puls gilt:
+	\begin{equation}
+		M_z(t) = M_0 \left[1-\left(1-\cos\theta\right)\exp\left\{-\frac{t}{T_1}\right\}\right]
+	\end{equation}
+Um dies nun zu messen, strahlt man nach einer variablen Verzögerungszeit $dt$ einen zweiten
+HF"=Puls mit demselben Tippingwinkel $\theta$ zur Abfrage der momentanen Entwicklung von $M_z(t)$
+ein. Danach ist der Betrag der $z$"=Komponente der Magnetisierung zum Zeitpunkt des Abfragepulses
+$\abs{M_z(dt)}$ proportional zur Größe der Komponente $M_\perp$ der Magnetisierung senkrecht zum
+äußeren Magnetfeld:
+	\begin{equation}
+		\label{eqn:t1messung}
+		\abs{M_z(dt)}\propto M_\perp=\sin\theta \abs{M_z(dt)}=\sin\theta M_0
+			\abs{1-\left(1-\cos\theta\right)\exp\left\{-\frac{dt}{T_1}\right\}}
+	\end{equation}
+Wenn man nun die Auswertung der Meßwerte simuliert und aus \eqref{eqn:t1messung} und
+\eqref{eqn:t1_m0} den Quotienten $\frac{\abs{M_z(dt)}}{M_0}$ bildet und dann, um einen
+exponentiellen Abfall zu erhalten, $1-\frac{\abs{M_z(dt)}}{M_0}$ über $dt$ aufträgt, erhält man
+einen Verlauf, der in Abbildung~\ref{fig:t1messung1} abhängig vom Tippingwinkel $\theta$ der
+HF"=Pulse dargestellt ist.
+ \begin{figure}[htp]
+		$$\includegraphics[angle=-90,width=\midwidth]{plots/t1_messung1}$$
+	\caption[Theoretischer Verlauf der Meßergebnisse der $T_1$"=Messung]{{\upshape\bfseries
+			Theoretischer Verlauf der Meßergebnisse der $T_1$"=Messung} in der verwendeten
+			Auftragung $1-\frac{\abs{M_z(dt)}}{M_0}$ über $dt$ bei Abweichung
+			vom Tippingwinkel $\theta=90$°. Den Knick bei kleinem $dt$ erhält man, wenn man das System
+			"`übertippt"', d.\ h.\ bei $\theta>90$°. Die Auswirkungen dieses Verlaufs auf die
+			erhaltenen Meßpunkte zeigen sich für das aufgrund des Skineffekts vorhandene
+			inhomogene Tipping bei den durchgeführten Messungen.}
+		\label{fig:t1messung1}
+ \end{figure}
+Demnach kann man also nach dem zweiten HF"=Puls ein Spulensignal messen, dessen
+Resonanzlinienamplitude proportional zum Wert der mittleren Magnetisierung in $z$"=Richtung zum
+Zeitpunkt des zweiten Pulses ist. Man hat also hier die Möglichkeit, die zeitliche Entwicklung der
+Relaxation der Magnetisierung $M_z$ zu bestimmen. Ein Nachteil dieser Methode ist jedoch, daß man
+mit jeder derartigen Zwei"=Puls"=Sequenz nur jeweils eine Verzögerungszeit $dt$ messen kann und
+danach wieder auf die vollständige Relaxation von $M_z$, die mehrere $T_1$
+dauert, warten muß. 
+Dies ist bei Messungen mit Temperaturen unter etwa 1 mK problematisch, da die
+$T_1$"=Relaxationszeiten auf Werte über 15 min ansteigen. Während der Wartezeit zwischen den
+Pulssequenzen driftet die Temperatur der Kernstufe (= Wärmereservoir des Experiments) zu höheren
+Temperaturen, was bei der Auswertung der Meßdaten berücksichtigt werden muß.
+
+\subsubsection{Festlegung der Meßparameter}
+
+Wie aus Gleichung~\eqref{eqn:t1messung} ersichtlich ist, erhält man die größte Änderung im Signal
+proportional $M_z(dt)$ für einen Tippingwinkel $\theta=90^\circ$. Da es sich bei der
+\aug"=Probe jedoch um eine massive Metallprobe handelt, verhindert der auftretende Skineffekt ein
+homogenes Tipping in die Tiefe der Probe hinein. Deshalb kann man nur von einem mittleren
+Tippingwinkel $\theta$ sprechen. Hier wurde als Ersatz für einen
+Tippingwinkel von 90° eine Anregung des Kernspinsystems gewählt, bei der man, wenn man sich von
+schwachen Anregungen nähert, das erste Maximum in der Linienintensität erhält. Die Positionen
+dieser "`90°"'"=Pulse sind in Abbildung~\ref{fig:tipping} eingezeichnet, in der die Amplituden der
+Resonanzlinien nach Hochfrequenzpulsen mit verschiedenen Anregungsstärken dargestellt sind.
+
+\begin{figure}[htp]
+	$$\includegraphics[angle=-90,width=\midwidth]{plots/tipping_aug1197_3}$$
+	\caption[Bestimmung des Tippingwinkels $\theta$]{{\upshape\bfseries Bestimmung des Tippingwinkels $\theta$}. Die Amplitude der jeweiligen
+		NMR"=Linie ist über der variierten Abschwächung der Amplitude des Pulses bei einer Anregungsfrequenz von
+		4.184 MHz ($^{69}$Ga) bzw.\ 5.318 MHz ($^{71}$Ga) und einer Pulsdauer von 30
+		Perioden aufgetragen. Zusätzlich sind die für die $T_1$"=Messung verwendeten Positionen der
+		"`90°"'"=Pulse eingezeichnet. Diese Messung wurde bei einer stabilisierten Temperatur von ca.\ 60
+		mK durchgeführt.}
+	\label{fig:tipping}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Messung der Spin"=Gitter Relaxationzeit $T_1$}
+
+Es wurde abwechselnd an den Galliumisotopen $^{69}$Ga und $^{71}$Ga die Spin"=Gitter Relaxation wie
+oben beschrieben gemessen. Die FIDs nach beiden HF"=Pulsen in der Sequenz wurden mit einem
+Speicheroszilloskop aufgenommen und vom Computer eingelesen und zur Auswertung abgespeichert.
+Zwischen den Pulssequenzen wurde eine Wartezeit eingehalten, die in der Größenordnung
+von $5T_1$ liegt, damit die Magnetisierung der Galliumisotope wieder vollständig auf ihren
+Gleichgewichtswert zurückrelaxieren kann. Bei einer Wartezeit von $5 T_1$ zwischen den
+Sequenzen ergibt sich ein Fehler von $e^{-5}=0.0067$, also von unter einem Prozent, für die
+Messung von $M_0$. Die
+Verzögerungszeiten $dt$ wurden so gewählt, daß sie den Bereich von $0$s bis $3T_1$ gleichmäßig
+abdecken. Bei späteren Messungen wurden die Wartezeiten zwischen den Pulssequenzen und die zu
+messenden Verzögerungszeiten $dt$ automatisch vom Meßprogramm für die jeweilige Temperatur, aus der
+in der ihrer Größenordnung bereits bekannten Spin"=Gitter Relaxationzeit $T_1$ berechnet und
+verwendet.
+
+\subsubsection{Auswertung der Meßdaten}
+
+Von den aufgenommenen FIDs wurden mittels Fouriertransformation (FFT) die Resonanzspektren in den
+Frequenzbereichen der Gallium"= und Kupfer"=NMR"=Linien berechnet. Schließlich wurden die NMR"=Linien
+dann noch an die vier Parameter
+ \begin{itemize}
+	\item Linienlage (in Hz)
+	\item Linienbreite (in Hz)
+	\item Absorption der Linie
+	\item Dispersion der Linie
+ \end{itemize}
+einer Fouriertransformierten eines idealen FIDs angepaßt. Diese ideale Resonanzlinie erhält man aus
+der Fouriertransformation des Produkts der exponentiell abfallenden Hüllfunktion mit einer
+Sinusschwingung. Sie ist einer Lorentzlinie ähnlich (siehe Abb.~\ref{fig:Auswertung}).
+
+ \begin{figure}[htp]
+	\begin{center}
+		\subfigure[aufgenommener freier Induktionszerfall der \aug"=Probe ({\bfseries Parameter}: $B_0=400$ mT
+			, $\nu_{rf}=4.184$ MHz, $t_\mathrm{Puls}=7.2 µ$s, Abschwächung: 17 dB,
+			Temperatur(Pt"=NMR): 6.1 mK)]{
+				$$\includegraphics[angle=-90,width=\bigwidth]{plots/auswert1}$$}
+		\subfigure[Frequenzspektrum des FID (Kreuze) mit NMR"=Linien"=Anpassung (durchgezogene Linie)]{
+				$$\includegraphics[angle=-90,width=\bigwidth]{plots/auswert2}$$}
+	\end{center}
+	\caption[Ein gemessener freier Induktionszerfall aus der $T_1$"=Messung]{{\upshape\bfseries Ein
+		gemessener freier Induktionszerfall aus der $T_1$"=Messung.} Im
+		berechneten Frequenzspektrum sieht man in der Reihenfolge von tiefen zu hohen Frequenzen
+		hin die NMR"=Linien von $^{69}$Ga, $^{63}$Cu, $^{65}$Cu und $^{71}$Ga.}
+	\label{fig:Auswertung}
+	\enlargethispage{\baselineskip}
+ \end{figure}
+
+Die Amplitude der Resonanzlinie des betrachteten Isotops ergibt sich aus dem geometrischen Mittel
+von Absorption und Dispersion. Sie ist bei konstanter Linienbreite proportional zur transversalen
+Komponente der Magnetisierung $M_\perp$ des jeweiligen Isotopes nach Ende des HF"=Pulses. Daraus
+erhält man folgende Informationen:
+ \begin{itemize}
+	\item Die Amplitude der Resonanzlinie im ersten FID ist proportional zur
+		Gleichgewichtsmagnetisierung $M_0$.
+	\item Die Amplitude der Resonanzlinie im zweiten FID ist dagegen proportional zum momentanen
+		Wert der Magnetisierung $\abs{M_z(dt)}$ in $z$"=Richtung zu Beginn des zweiten HF"=Pulses.
+ \end{itemize}
+Da die Proportionalitätsfaktoren von $M_0$ und $\abs{M_z(dt)}$ identisch sind, kann man somit den
+Quotienten der Magnetisierungen direkt aus dem Quotienten der Amplituden der Resonanzlinie
+bestimmen:
+	\begin{equation}
+		\frac{\abs{M_t(dt)}}{M_0}=\frac{A_\mathrm{Puls 2}}{A_\mathrm{Puls 1}}
+	\end{equation}
+Wenn man nun $1-\frac{\abs{M_t(dt)}}{M_0}$ gegen die Verzögerungszeit $dt$ aufträgt, erhält man die
+exponetielle Relaxation von $M_z$. Die Messungen, die bei konstanter Temperatur durchgeführt wurden,
+können so einfach durch Bestimmung der Geradensteigung bei logarithmischer Auftragung von
+$1-\abs{M_z(dt)}/M_0$ gegen die Verzögerungszeit $dt$ ausgewertet werden. In dieser Darstellung
+ergibt sich die Spin"=Gitter Relaxationzeit nach \eqref{eqn:t1messung} aus dem Kehrwert der
+Geradensteigung der Anpassungsgerade. Die in den Abbildungen \ref{fig:t1ergebnis1} und
+\ref{fig:t1ergebnis2} gezeigten Fehlerbalken folgen aus dem statistischen Fehler des
+least"=square"=Fits der NMR"=Linien im Frequenzspektrum und sind als Anhaltspunkt für den Meßfehler
+in der logarithmischen Darstellung zu betrachten.
+
+In Abbildung~\ref{fig:t1ergebnis1} ist das Ergebnis der ersten Messung von $T_1$ bei einem Feld
+$B_0=140$~mT dargestellt. Bei dieser Messung wurde die Größe $M_0$ nur einmal, zu Beginn der Meßreihe,
+bestimmt. Bei den darauf folgenden Messungen von $T_1$ bei einem Feld $B_0=400$~mT wurden die FIDs
+beider Pulse, wie oben beschrieben aufgezeichnet und man erhält daraus ein $M_0$ für jede
+Pulssequenz.
+
+ \begin{figure}[p]
+	\begin{center}
+		\subfigure[$T_1$ von $^{69}$Ga in \aug{} mit $B_0=400$ mT]{
+			$$\includegraphics[angle=-90,width=\bigwidth]{plots/t1_auswert_1}$$}
+		\subfigure[$T_1$ von $^{71}$Ga in \aug{} mit $B_0=400$ mT]{
+			$$\includegraphics[angle=-90,width=\bigwidth]{plots/t1_auswert_2}$$}
+	\end{center}
+	\caption[Ergebnisse der $T_1$"=Messungen bei 400 mT]{{\upshape\bfseries Ergebnisse der
+		$T_1$"=Messungen bei 400 mT}
+		bei Temperaturen T=5.5 mK, 17 mK und 60 mK. Das Abweichen der Punkte von der
+		Anpassungsgerade bei kurzen Verzögerungszeiten $dt$, das vor allem im Ausschnittsbild
+		deutlich zu sehen ist, wird im Text diskutiert. [{\bfseries Parameter}: $B_0=400$~mT,
+		$\nu(^{69}\mathrm{Ga})=4.184$~MHz, $\nu(^{71}\mathrm{Ga})=5.318$~MHz, Pulsdauer: 30
+		Perioden, Abschwächung: $^{69}$Ga: 17 dB / $^{71}$Ga: 15 dB]}
+	\label{fig:t1ergebnis2}
+ \end{figure}
+
+ \begin{figure}[htp]
+	\begin{center}
+		\subfigure[$T_1$ von $^{69}$Ga in \aug{}]{
+			$$\includegraphics[angle=-90,width=\bigwidth]{plots/t1_aug0497d0_1}$$}
+		\subfigure[$T_1$ von $^{69}$Ga in \aug{}]{
+			$$\includegraphics[angle=-90,width=\bigwidth]{plots/t1_aug0497d0_2}$$}	
+	\end{center}
+	\caption[Ergebnisse der $T_1$"=Messungen bei 140 mT]{{\upshape\bfseries Ergebnisse der
+		$T_1$"=Messungen bei 140 mT} bei einer
+		stabilisierten Temperatur von 5.5~mK. [{\bfseries Parameter}: $B_0=140$~mT,
+		$\nu(^{69}\mathrm{Ga})=1.455$~MHz, $\nu(^{71}\mathrm{Ga})=1.850$~MHz, Pulsdauer: 10
+		Perioden, Abschwächung: $^{69}$Ga: 20 dB / $^{71}$Ga: 18 dB]} 
+	\label{fig:t1ergebnis1}
+ \end{figure}
+
+Die deutliche Abweichung der Meßpunkte von der Anpassungsgeraden bei kurzen Verzögerungszeiten,
+die vor allem in den Ausschitten in Abbildung~\ref{fig:t1ergebnis2} zu sehen ist, soll hier kurz
+diskutiert werden. In Abbildung~\ref{fig:t1messung1} sieht man den theoretischen Verlauf der
+gemessenen Kurven für ein definiertes homogenes Tipping der Kernspins. Wenn man nun eine infolge
+des Skineffekts gegebene reale Verteilung der Tippingwinkel annimmt, wird es zu einer Überlagerung
+einer Kurvenschar nach Abbildung~\ref{fig:t1messung1} kommen, die durch die vorliegende Verteilung
+von Tippingwinkel bestimmt ist. Die Abrundung im gemessenen Verlauf von
+$1-\frac{\abs{M_z(dt)}}{M_0}$ bei kleinen Verzögerugszeiten $dt$ weist also auf die Existenz von
+Tippingwinkeln größer als 90° hin. Da die Abweichungen von der Anpassungsgeraden bei der Messung
+von $^{71}$Ga höher sind als bei $^{69}$Ga, kann man sogar sagen, daß die Spins von $^{71}$Ga
+stärker angeregt wurden als die von $^{69}$Ga.
+
+Anhand der Ergebnisse der bei konstanter Temperatur durchgeführten Messungen der Spin"=Gitter Relaxationzeit
+kann man nun die Gültigkeit der Korringa"=Relation (nach Gleichung \eqref{eqn:korringa})
+	\begin{equation}
+		\label{eqn:korringarel}
+		T_1 = \frac{\kappa}{T_\mathrm{el}} 
+	\end{equation}
+überprüfen. Aus der Anpassungsgeraden in Abbildung~\ref{fig:t1korringa} ergeben sich folgende
+Werte für die Korringakonstanten der Galliumisotope in \aug{} bei einem Magnetfeld von $B_0=400$~mT:
+	$$\begin{tabular}{|r|r|}\hline
+		$^{69}$Ga:	& $1030\pm13$ mK s\\\hline
+		$^{71}$Ga:	& $720\pm54$ mK s\\\hline
+	\end{tabular}$$
+ \begin{figure}[htp]
+	$$\includegraphics[angle=-90,width=\midwidth]{plots/t1_auswert2}$$
+	\caption[Ergebnisse der $T_1$"=Messungen mit Anpassung an die
+		Korringarelation]{{\upshape\bfseries Ergebnisse der $T_1$"=Messungen.} In der Auftragung der
+		gemessenen Spin"=Gitter Relaxationzeiten über $\frac1{T}$ kann man die Gültigkeit der
+		Korringarelation für die $T_1$"=Messung bei $B_0=400$~mT überprüfen. Die Korringa"=Konstante
+		$\kappa$ ergibt sich aus der Geradensteigung der Anpassungsgerade. Die Meßpunkte der
+		Messung bei $B_0=140mT$, für die sich eine geringere Korringakonstante ergibt, sind gekennzeichnet.}
+	\label{fig:t1korringa}
+ \end{figure}
+
+Nachdem durch die Messungen bei konstanter Temperatur nachgewiesen wurde, daß die
+Spin"=Gitter Relaxationzeit $T_1$ von Gallium in \aug{} eine Temperaturabhängigkeit nach der
+Korringa"=Relation \eqref{eqn:korringarel} zeigt, kann man auch Messungen von $T_1$ durchführen,
+in deren Verlauf die Temperatur der Probe nicht konstant ist.
+
+\subsubsection{$T_1$"=Messungen bei variabler Probentemperatur}
+
+Für die Messungen während der Aufwärmdrift nach Entmagnetisierung der Kupferkernstufe muß in der
+Auswertung die sich während der Messung ändernde Temperatur der Probe zuerst aus den Meßwerten
+bestimmt und dann bei der weiteren Auswertung berücksichtigt werden. Hierbei ist die
+Vorgehensweise wie folgt:
+
+Die Bestimmung der Temperatur der Probe (hier der Spintemperatur) geschieht nach dem Curie"=Gesetz aus der zur
+Magnetisierung $M_0$ proportionalen Amplitude $A_\mathrm{Puls1}$ des FIDs nach dem ersten HF"=Puls.
+	\begin{equation}
+		\label{eqn:expcurie}
+		T_\aug=\frac{c_\mathrm{Curie}}{M_0}\quad\Longrightarrow\quad c_\mathrm{Curie}=M_0\,T_\aug
+	\end{equation}
+Die Curiekonstante $c_\mathrm{Curie}$ kann man aus dieser Gleichung jedoch nicht bestimmen, da
+$T_\aug$ ebenfalls unbekannt ist. Man kann aber die unbekannte Probentemperatur $T_\aug$ durch die
+bekannte Temperatur am Pt"=NMR"=Thermometer $T_\mathrm{Pt}$ und einen unbekannten Temperaturgradienten
+$\Delta(T_\aug,T_\mathrm{Pt})$ ausdrücken:
+	\begin{equation}
+		T_\aug=T_\mathrm{Pt} + \Delta(T_\aug,T_\mathrm{Pt})
+	\end{equation}
+Wieder in die Gleichung \eqref{eqn:expcurie} zur Bestimmung der Curie"=Konstante eingesetzt erhält man:
+	\begin{equation}
+		c_\mathrm{Curie}=M_0\,T_\mathrm{Pt} + M_0\,\Delta(T_\aug,T_\mathrm{Pt})
+	\end{equation}
+Nun kann man für hohe Temperaturen ($T\approx60mK$) den Beitrag des Temperaturgradienten
+$\Delta(T_\aug,T_\mathrm{Pt})$ im Vergleich zur Temperatur $T_\mathrm{Pt}$ vernachlässigen.
+Somit kann man die Curie"=Konstante zur Bestimmung der Temperatur der \aug"=Probe näherungsweise
+berechnen:
+	\begin{equation}
+		c_\mathrm{Curie}\approx M_0\,T_\mathrm{Pt}
+	\end{equation}
+Anstelle von $M_0$ verwendet man die Amplitude $A_\mathrm{Puls1}$ der NMR"=Linie im FID des ersten
+HF"=Pulses des jeweils gemessenen Galliumisotops. Die experimentelle Curie"=Konstante bestimmt man
+durch Mittelung des Produkts von $T_\mathrm{Pt}$ und $A_\mathrm{Puls1}$ über alle Meßwerte mit
+$T_\mathrm{Pt}>50mK$. Sobald eine Curie"=Konstante für eine Meßreihe an einem Isotop bestimmt ist,
+läßt sich nach dem Curiegesetz \eqref{eqn:curie} die Probentemperatur für alle mit den gleichen
+Parametern gemessenen FIDs aus dem jeweiligen $A_\mathrm{Puls1}$ bestimmen. Die Thermometrie der
+Messung kann dann alleine durch die aus dem FID des Referenzpulses bestimmten Amplituden
+$A_\mathrm{Puls1}$ erhalten werden. In Abbildung~\ref{fig:sampletemp} ist die so bestimmte
+Temperatur $T_\aug$ der Probe über der Temperatur $T_\mathrm{Pt}$ aufgetragen, die mit dem
+Platin"=NMR"=Thermometer gemessen wurde. Die unter 1~mK auftretenden Abweichungen können
+verschiedene Ursachen haben. Zum einen steigt der Einfluß des Temperaturgradienten
+$\Delta(T_\aug,T_\mathrm{Pt})$ bei tieferen Temperaturen an und zusätzlich verläßt man im Feld von
+$B_0=400$~mT und bei Temperaturen unter 0.6~mK den Gültigkeitsbereich des Curie"=Gesetzes, das nur
+eine Näherung der Brillouin"=Funktion für "`hohe"' Temperaturen darstellt (In
+Abbildung~\ref{fig:frequenzshift} ist der Verlauf der Polarisation von \aug{} für tiefe
+Temperaturen dargestellt).
+
+Nun kann man analog zu den Messungen bei konstanter Temperatur die Meßwerte zu
+$1-\frac{\abs{M_z(dt)}}{M_0}=1-\frac{A_\mathrm{Puls2}}{A_\mathrm{Puls1}}$
+zusammengefaßt auftragen. Da die Gültigkeit der Korringarelation für Gallium in \aug{} im Rahmen der
+Meßfehler im vorhergehenden Abschnitt gezeigt wurde, kann man nun zu einer von der Temperatur
+unabhängigen Darstellung der Abs\-zis\-sen\-wer\-te übergehen. Hierzu multipliziert man die bekannte
+Verzögerungszeit $dt$ mit der aus dem Curie"=Gesetz ermittelten Probentemperatur $T_\aug$ und
+verwendet also eine Auftragung von $1-\frac{A_\mathrm{Puls2}}{A_\mathrm{Puls1}}$ über
+$dt\,T_\aug$. Aus der Anpassung einer Exponentialfunktion $a\cdot e^{-b\cdot x}$ mit den
+Parametern $a$ und $b$ an die so erhaltenen Punkte erhält man nun direkt die Korringakonstante
+$\kappa$. Diese ergibt ich dann aus dem Kehrwert des Parameters $b$. Die Datenpunkte und die daran
+angepaßte Exponentialfunktion sind in Abbildung~\ref{fig:t1plotTdt} sehen.
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[angle=-90,width=\midwidth]{plots/t1_aug1197da_2}
+	\end{center}
+	\caption[Abweichung der mit Hilfe des Curie"=Gesetzes bestimmten
+		Probentemperatur von der Pt"=NMR"=Temperatur]{{\upshape\bfseries Abweichung der mit Hilfe des Curie"=Gesetzes bestimmten
+		Probentemperatur von der Pt"=NMR"=Temperatur.} Aus der $T_1$"=Messung während der
+		Aufwärmdrift nach Entmagetisierung der Kupferkernstufe}
+	\label{fig:sampletemp}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+			\includegraphics[angle=-90,width=\bigwidth]{plots/t1_aug1197da_3}
+	\end{center}
+	\caption[Temperaturunabhängige Auftragung von $1 -\frac{\abs{M_z(dt)}}{M_0}$ mit Anpassung an
+		die Korringarelation.]{{\upshape\bfseries Temperaturunabhängige Auftragung von $1 -
+		\frac{\abs{M_z(dt)}}{M_0}$ mit Anpassung an die Korringarelation.} Ergebnis der $T_1$"=Messung
+		während der Aufwärmdrift nach Entmagetisierung der Kupferkernstufe. [{\bfseries Parameter:}  $B_0=400$~mT,
+		$\nu(^{69}\mathrm{Ga})=4.184$~MHz, $\nu(^{71}\mathrm{Ga})=5.318$~MHz, Pulsdauer: 30
+		Perioden, Abschwächung: $^{69}$Ga: 17 dB / $^{71}$Ga: 15 dB]}
+	\label{fig:t1plotTdt}
+\end{figure}
+
+Aus dieser Messung erhält man einen Wert für die Korringakonstanten der Galliumisotope in \aug{} von 
+	$$\begin{tabular}{|r|r|}\hline
+		$^{69}$Ga:	& $1158\pm62$ mK s\\\hline
+		$^{71}$Ga:	& $697\pm18$ mK s\\\hline
+	\end{tabular}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Messung der Spin"=Spin Relaxationzeit T$_2$}
+\label{sec:messungt2}
+
+Die Spin"=Spin Relaxationzeit $T_2$ wurde mittels eines Spin"=Echos nach der Hahnschen Pulssequenz
+(90°--$\tau$--180°) gemessen. Damit man die Amplitude von Spin"=Echos nach Zeiten $2\tau$ messen
+kann, die in der Größenordnung der Zerfallszeit des FIDs liegen, wurde die effektive
+Spin"=Spin Relaxationzeit $T_2^\ast$ mit Hilfe eines zusätzlichen starken Magnetfeldgradienten am
+Probenort nach Gleichung \eqref{eqn:t2stern} verringert und somit der FID stark verkürzt. Dieser
+Gradient wird mit Hilfe der Gradientenspule erzeugt, die sich am unteren Hauptmagneten befindet
+(siehe Abb.~\ref{fig:Kryostat}). Der Strom durch die untere Gradientenspule wurde auf 50 A
+eingestellt, woraus sich nach der Herstellerangabe ein Magnetfeldgradient von
+$0.28\frac{\mathrm{mT}}{\mathrm{cm}\mathrm{A}}\cdot
+50\mathrm{A}=14\frac{\mathrm{mT}}{\mathrm{cm}}$ ergibt.
+
+\subsubsection{Die Linienform bei starken Magnetfeldgradienten}
+Nach Anlegen des Magnetfeldgradienten änderte die Resonanzlinie deutlich ihre Form von der
+bekannten NMR"=Resonanzlinie zu einer Doppellinie (zu sehen im Spektrum in
+Abbildung~\ref{fig:t2messung}). Dies läßt sich folgendermaßen erklären: Durch den Skineffekt wird
+bei der NMR an massiven Metallproben nur eine Oberflächenschicht mit der Dicke der Skintiefe
+angeregt und auch detektiert. Da nun zusätzlich zum statischen Feld $B_0$ ein Magnetfeldgradient
+in $z$"=Richtung an der Probe vorliegt, folgt daraus eine Verteilung von NMR"=Resonanzfrequenzen,
+die von den Beiträgen der Probe zu verschiedenen $z$"=Komponenten bestimmt wird. Ein
+einfaches Modell für die Auswirkungen des Skineffekts auf die Linienform ist ein dünnwandiges Rohr
+mit dem Probenradius $R$ und Wandstärke $\delta$ in der Größenordnung der Skintiefe, für das der
+Skineffekt vernachlässigbar und somit ein homogenes Tippingverhalten vorliegt. Es ergibt sich ein
+radialer Beitrag zum NMR"=Signal, der durch das Produkt zweier Stufenfunktionen gegeben ist,
+	\begin{equation}
+		a(r) = \Theta\bigl(R-r\bigr)\Theta\bigl(\delta-(R-r)\bigr)
+	\end{equation}
+Wobei für den Abstand $r$ von der Proben"= oder Rohrachse in dem hier verwendeten Koordinatensystem
+(siehe Abb~\ref{fig:gradlinform_a}) aufgrund der Zylindersymmetrie $r=\sqrt{y^2+z^2}$ gilt.
+Der Beitrag zu einem bestimmten Magnetfeld ist wegen der Linearität von Gleichung~\eqref{eqn:resonanzbed}
+proportional zur NMR"=Resonanzfrequenz. Bei dem vorhandenen Gradienten des Magnetfeldes in
+$z$"=Richtung ist der Beitrag $b(z)$ zur Resonanzfrequenz somit proportional dem Integral von
+$a(r)$ über $y$ bei fester $z$"=Koordinate:
+	\begin{equation}
+		\label{eqn:gradbeitrag}
+		b(z) = \int\limits_{-R}^{+R}a(\sqrt{y^2+z^2})dy
+	\end{equation}
+Der Verlauf dieses Integrals in Abhängigkeit von der $z$"=Koordinate ist in
+Abbildung~\ref{fig:gradlinform} dargestellt. Das Aussehen der Resonanzlinie im NMR"=Spektrum erhält man nun
+aus der Überlagerung aller Beiträge $b\bigl(z(\nu_\mathrm{Larmor})\bigr)$ über die Probe hinweg.
+Das heißt durch Faltung der Funktion in Abb~\ref{fig:gradlinform_b} mit einer NMR"=Resonanzlinie ohne
+Magnetfeldgradient.
+
+\begin{figure}[htp]
+	\begin{center}
+		\subfigure[Querschnitt durch die NMR"=Probe]{
+			\label{fig:gradlinform_a}
+			\parbox[c]{0.6\smallwidth}{\centering\includegraphics[width=0.6\smallwidth]{drawings/gradlinform}}}
+		\subfigure[Verhalten von Gleichung \ref{eqn:gradbeitrag} für die Parameter $R=0.15$,
+			$\delta=0.005$]{
+			\label{fig:gradlinform_b}
+			\parbox[c]{0.9\smallwidth}{\centering\includegraphics[angle=-90,width=0.9\smallwidth]{plots/gradlinform}}}
+	\end{center}
+	\caption[Erklärung der Änderung der Linienform durch einen Gradienten des
+		Magnetfeldes]{{\upshape\bfseries Erklärung der Änderung der Linienform durch einen Gradienten des
+		Magnetfeldes.} Im rechten Bild sieht man die Intensitätverteilung der Resonanzfrequenzen
+		in $z$"=Richung über die Probe hinweg. Die wahre Form der NMR"=Linie ergibt sich durch
+		Faltung einer NMR"=Resonanzlinie ohne Magnetfeldgradient mit der Funktion aus
+		Gleichung~\eqref{eqn:gradbeitrag} im Frequenzraum. Die Umrechnung von der $z$"=Koordinate
+		in eine Frequenz $\nu$ erfolgt bei bekanntem Gradienten nach Gleichung~\eqref{eqn:resonanzbed}. }
+	\label{fig:gradlinform}
+\end{figure}
+
+Auf diese Weise kann man für das Modell den Magnetfeldgradienten aus dem Abstand der beiden
+Spitzen der Resonanzlinie bestimmen. Aus Abbildung~\ref{fig:t2messung} ergibt sich für den Abstand
+der Spitzen $\Delta\nu=61\pm20$~kHz. Für den Magnetfeldgradienten ergibt sich nun folgende Formel:
+	\begin{equation}
+		\nabla B=\frac{\Delta\nu}{\gamma\Delta z}=
+			\frac{100\pm50\,\mathrm{kHz}}{13.001\frac{\mathrm{kHz}}{\mathrm{mT}}0.3\,\mathrm{cm}}=
+			16\pm5\frac{\mathrm{mT}}{\mathrm{cm}}
+	\end{equation}
+Der so errechnete Wert stimmt innerhalb der Fehler mit der Herstellerangabe von
+$14\frac{\mathrm{mT}}{\mathrm{cm}}$ bei einem Spulenstrom von 50~A für die Gradientenspule
+überein.
+
+\subsubsection{Durchführung der Messung}
+
+Das Prinzip der Wirkung der 90°--$\tau$--180° Pulssequenz zur Messung der
+Spin"=Spin Relaxationszeit $T_2$ ist aus Abbildung~\ref{fig:t2methode} ersichtlich. Die nach
+dem ersten 90° HF"=Puls ausgelenkten Spins laufen aufgrund der vom Magnetfeldgradienten
+verursachten unterschiedlichen Larmorfrequenzen auseinander. Nach der Zeit $\tau$ werden durch Einstrahlung
+eines 180° HF"=Pulses die so dephasierten Spins in der $xy$"=Ebene umgeklappt. Da sich die Verteilung der
+Larmorfrequenzen auf der Probe nicht ändert, wird der Prozeß des
+Auseinanderlaufens der Kernspins wieder umgekehrt. Nach der Zeit $2\tau$ fokussieren die Spins
+wieder bei einer Position, die zur Ausgangsposition um 180° phasenverschoben ist. Mit der
+Probenspule detektiert man dann das Auftreten eines Spin"=Echos. Aus der Verringerung der Amplitude
+einer NMR"=Resonanzlinie des Echos im Vergleich zur Amplitude der Resonanzlinie im FID nach dem 90°
+HF"=Puls erhält man die intrinsische Spin"=Spin Relaxationzeit $T_2$.
+
+ \begin{figure}[htp]
+	$$\includegraphics{drawings/T2Messung}$$
+%	$$\includegraphics[bb=0 0 380 160]{drawings/t2messung.eps}$$
+	\caption[Schema der Methode zur Messung der Spin"=Spin Relaxationzeit]{{\upshape\bfseries Schema der Methode zur Messung der Spin"=Spin Relaxationzeit} im
+		mit einer mittleren Frequenz $\overline{\omega}$ rotierenden Koordinatensystem betrachtet.
+		Dem ersten 90°"=Puls folgt nach variabler Verzögerung $\tau$ der 180°"=Puls, der das Feld
+		der bereits auseinandergelaufenen, dephasierten Spins an der $yz$"=Ebene spiegelt und
+		somit zu einer Fokussierung der Spins führt, die daraufhin zur Zeit $2\tau$ ein mit der
+		Probenspule meßbares Echo erzeugen, das nur durch die intrinsische Dephasierung an
+		Amplitude verloren hat.}
+	\label{fig:t2methode}
+ \end{figure}
+
+Zur Messung der Spin"=Spin Relaxationzeit $T_2$ wurde nun gezielt die in der Frequenz höher
+liegende, rechte Resonanzlinie des Isotops $^{71}$Ga angeregt (siehe Abb.~\ref{fig:t2messung}).
+Hierbei muß man noch anmerken, daß sich die Probe bei dieser Messung nicht im Mittelpunkt der
+Gradientenspule befand. Somit sind alle Frequenzen durch den konstanten Anteil des Gradienten, der
+durch den Abstand der Probe vom Nullpunkt des Gradientenfeldes gegeben ist, leicht zu
+höheren Frequenzen hin verschoben. Vor Einschalten des Gradientenfeldes lag die Resonanzlinie von
+$^{71}$Ga bei 2.456~MHz, aber die Mittenfrequenz der Doppellinie bei vorhandenem
+Magnetfeldgradienten ist 2.686~MHz. Aus der Differenz der beiden Frequenzen errechnet sich ein
+mittleres Gradientenfeld an der Probe von
+	\begin{equation}
+		\Delta B_0 =
+			\frac{2686\:\mathrm{kHz}-2456\;\mathrm{kHz}}{13.001\frac{\mathrm{kHz}}{\mathrm{mT}}} =
+			18 mT \ttext{.}
+	\end{equation}
+Das heißt, daß die Spin"=Spin Relaxationzeit mit dieser Messung in einem Feld von ca.\ 207~mT bestimmt
+wurde.
+
+Für den 90° HF"=Puls wurde für eine Frequenz von $\nu=2.720$~MHz und eine Pulslänge von $1.47\;\mu$s
+eine Abschwächung von 6 dB ermittelt. Der HF"=Pulser wurde so programmiert,
+daß er das Analog"=Gate zuerst für 1.47~$\mu$s öffnet, dann für $\tau\;\mu$s schließt und dann wieder für
+$2.94\;\mu$s öffnet. Diese Pulssequenzen wurden, um eine vollständige Relaxation der Spin"= und
+Elektronentemperatur der Probe zu gewährleisten, mit einem zeitlichen Abstand von mindestens
+$5T_1$ ausgeführt.
+
+ \begin{figure}[htp]
+	\begin{center}
+		\includegraphics[angle=-90,width=\bigwidth]{plots/t2_auswert_shots_1}
+
+		\includegraphics[angle=-90,width=\bigwidth]{plots/t2_auswert_shots_2}
+	\end{center}
+	\caption[Eine gemessene Pulssequenz der $T_2$"=Messung]{{\upshape\bfseries Eine gemessene Pulssequenz der $T_2$"=Messung.} Man sieht das
+		Auftreten des Spin"=Echos, dessen Amplitude mit größerer Wartezeit $\tau$ kleiner wird. Die
+		zur Bestimmung der Signalamplitude verwendeten Fenster, in denen eine Fouriertransformation
+		des Zeitsignals durchgeführt wurde, sind gestrichelt eingezeichnet. In der
+		Fouriertransformation des FID nach dem 1. 90° Puls im rechten Bild sieht man deutlich die
+		Aufspaltung der Linie des $^{71}$Ga in die im Text beschriebene Doppellinie [{\bfseries
+		Parameter:} $B_0$=207~mT, $\Delta B$=14$\frac{\mathrm{mT}}{\mathrm{cm}}$, $\nu$=2.720MHz,
+		Pulslänge: 1.47~$\mu$s--$\tau$--2.94~$\mu$s, Abschwächung: 6 dB]}
+	\label{fig:t2messung}
+ \end{figure}
+
+\subsubsection{Auswertung der $T_2$"=Messung}
+Aufgrund der durch den Magnetfeldgradienten veränderten Linienform konnte keine Anpassung der
+NMR"=Linien im Frequenzspektrum des FIDs nach dem 90° HF"=Puls und des Echos durchgeführt werden. 
+Als Ersatz hierfür wurde die Amplitude der Resonanzlinie direkt aus dem Frequenzspektrum des
+Echosignals ermittelt.
+
+Aus der Blochgleichung~\eqref{eqn:bloch} ergibt sich ein exponentieller Zerfall der
+Quermagnetisierung $M_\perp$ mit der Zeitkonstante $T_2$. Da die aus dem Frequenzspektrum des Echos
+bestimmte Amplitude über die Änderungen des magnetischen Flusses durch die Probenspule proportional zur
+Quermagnetisierung $M_\perp$ ist, kann man die Zerfallszeit $T_2$ daraus bestimmen.
+Auf eine Normierung der aus dem Echospektrum erhaltenen Amplitudenwerte wurde verzichtet, da dies
+für eine Bestimmung der Zeitkonstante des Zerfalls nicht nötig ist. Wenn man nun wie in
+Abbildung~\ref{fig:t2ergebnis} zu sehen die gemessene Amplitude der Resonanzlinie über der
+Zeit $2\tau$ aufträgt, kann man daran in logarithmischer Darstellung eine Gerade anpassen. Die
+Zeitkonstante $T_2$ ergibt sich dann aus dem negativen Kehrwert der ermittelten Steigung der
+Geraden. In diesem Fall erhält man 
+$$\fbox{$T_2 = 39.6\pm0.7\;\mu$s.}$$
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[angle=-90,width=\midwidth]{plots/t2_aug0897_4}
+	\end{center}
+	\caption[Ergebnis der $T_2$"=Messung]{{\upshape\bfseries Ergebnis der $T_2$"=Messung.} Diese Messung wurde bei einer
+		konstanten Temperatur von 5 mK bei einem Magnetfeld $B_0$ von 207 mT durchgeführt. Aus
+		der Anpassung der Geraden an die Meßdaten ergibt sich für $T_2=39.6\;µ$s}
+	\label{fig:t2ergebnis}
+ \end{figure}
+
+\subsection{Frequenzverschiebung der NMR"=Linien}
+Die aus der Anpassung der NMR"=Resonanzlinien mit hoher Genauigkeit erhaltenen Frequenzlagen der
+Resonanzen kann man über die jeweilige Probentemperatur auftragen, wie in Abbildung~\ref{fig:frequenzshift}
+zu sehen.
+
+Die Polarisationen der Elemente Gallium und Kupfer besitzen aufgrund des in der gleichen Größenordnung
+liegenden magnetischen Moments und des übereinstimmenden Kernspins von $\frac32$ eine ähnliche
+Temperaturabhängigkeit. Deshalb sollte die Resonanzlinie des Kupfers der NMR"=Spule
+zu tiefen Temperaturen hin, also bei steigender Polarisation, ein ähnliches Verhalten in der
+Linienverschiebung wie die Linien der Galliumisotope zeigen, die ein Resultat der zunehmenden Magnetisierung
+ist. Da dieses vorhergesagte Verhalten nicht eintritt, kann man folgern, daß die Kupferspule für
+Temperaturen unterhalb von T>40~mK thermisch nur noch schlecht an die \aug"=Probe angekoppelt ist.
+Wogegen man bei den Galliumlinien eine deutliche, mit der Polarisation zunehmende Linienverschiebung
+erkennen kann.
+
+Die in Abbildung~\ref{fig:frequenzshift} eingezeichneten mittleren Resonanzlinienpositionen für
+eine Temperatur $T>40$~mK können zur Überprüfung der Knight"=Shift $\K$ herangezogen werden:
+	$$\begin{tabular}{|r||c|c|c|}\hline
+					& $^{63}$Cu	& $^{69}$Ga	& $^{71}$Ga	\\\hline
+	$\nu$ / [kHz]	& 4640		& 4185		& 5318		\\\hline
+	\end{tabular}$$
+Aus der Position der Kupferlinie ergibt sich ein Feld von 410~mT an der Probe. Nun kann man die
+Knightshift der Gallium"=Resonanzlinien aus
+	\begin{equation}
+		\gamma(1+\K)\,B=\nu\quad\Longrightarrow\quad\K=\frac{\nu}{\gamma\,B}-1
+	\end{equation}
+bestimmen. Man erhält nun für $\K(^{69}\mathrm{Ga})= -0.16$\% und $\K(^{71}\mathrm{Ga})=
+-0.14$\%. Die Knight\-shift von $^{71}$Ga stimmt mit dem in \cite{AuGa2Dilemma} angegebenen Wert
+überein.
+
+ \begin{figure}[htp]
+	\begin{center}
+		\includegraphics[angle=-90,width=\ssmallwidth]{plots/knight_aug1197da_3}\\
+		\includegraphics[angle=-90,width=\ssmallwidth]{plots/knight_aug1197da_4}\\
+		\includegraphics[angle=-90,width=\ssmallwidth]{plots/knight_aug1197da_5}\\
+		\includegraphics[angle=-90,width=\ssmallwidth]{plots/pol_ga}
+	\end{center}
+	\caption[Frequenzlagen der $^{69}$Ga"= und $^{71}$Ga"= und
+		$^{63}$Cu"=Resonanzlinien]{{\upshape\bfseries Frequenzlagen der $^{69}$Ga"= und $^{71}$Ga"= und
+		$^{63}$Cu"=Resonanzlinien.} Die mittleren Frequenzen für Temperaturen über 40 mK sind durch
+		waagerechte Striche gekennzeichnet. Im Plot rechts unten ist der Verlauf der Polarisation
+		von \aug{} bei tiefen Temperaturen für die in den durchgeführten Messungen verwendeten
+		Magnetfelder dargestellt.}
+	\label{fig:frequenzshift}
+ \end{figure}
+
+\section{Zusammenfassung und Diskussion der Ergebnisse}
+
+Es wurde im Rahmen dieser Arbeit eine einphasige, polykristalline \aug"=Probe aus 6N$^+$ Ga und 5N$^+$Au hergestellt.
+Die Charakterisierung ergab ein Restwiderstandsverhältnis von 210, und aus der Messung der
+statischen Suszeptibilität konnte man die Konzentration der magnetischen Verunreinigungen ($\sim \mu_B$)
+der Probe mit 1 ppm nach oben hin abschätzen.
+
+Weiterhin wurde die Spin"=Gitter Relaxationzeit $T_1$ bei den Feldern 0.14 und 0.4 T und im
+Temperaturbereich von 0.8 bis 60 mK gemessen:
+
+	$$\begin{tabular}{|r||c|c|c|c|}\hline
+		$B_0$ / [mT]	& 140	& \multicolumn{3}{c|}{400}\\\hline
+		$T$ / [K]		& 5.5	& 5.6	& 17	& 60	\\\hline\hline
+		$T_1(\ga)$		& 146.0	& 187.0	& 60.51	& 17.47	\\\hline
+		$T_1(\gb)$		& 104.7	& 130.7	& 36.95	& 10.94 \\\hline
+	\end{tabular}$$
+
+Für die Spin"=Gitter Relaxationzeiten $T_1$ im Feld 400~mT ergab sich Korringaverhalten mit:
+	$$\begin{tabular}{|r@{ = }l|}\hline
+		$\kappa(\ga)$	& $1030\pm13$ mK s\\
+		$\kappa(\gb)$	& $720\pm53$ mK s\\\hline
+	\end{tabular}$$
+
+In Spin"=Echo Experimenten ergab sich für $^{71}Ga$ im Feld $B=207$~mT für die Temperatur $T=5$~mK eine Spin"=Spin Relaxationzeit T$_2$ von
+$39.6\pm0.7\mu$s.
+
+Die Linienbreiten waren für beide Gallium"=Isotope im untersuchten Bereich feld"= und temperaturunabhängig.
+
+Schließlich wurde die Knightshift von Gallium aus der Frequenz der Resonanzlinien und der
+bekannten Knightshift von Kupfer bestimmt:
+	$$\begin{tabular}{|r@{ = }l|}\hline
+		\K(\ga)	& $-0.16$\%\\
+		\K(\gb)	& $-0.14$\%\\\hline
+	\end{tabular}$$
+
+\subsubsection{Diskussion der Ergebnisse und Ausblick}
+
+Das in \cite{Wagner_Dis} beschriebene NMR"=Verhalten von AuIn$_2$ konnte mit den im Rahmen dieser
+Arbeit durchgeführten Messungen für \aug{} nicht beobachtet werden. 
+
+In Übereinstimmung mit AuIn$_2$ ist die Verkürzung der Spin"=Spin Korrelationszeit $T_2$ um eine
+Größenordnung. In der folgenden Tabelle sind die gemessenen NMR"=spezifischen Parameter zum Vergleich gegen
+die von elementarem Gallium und AuIn$_2$ aufgetragen:
+	$$
+	\begin{tabular}{|r||c|c|c|c||c|c|}
+	\cline{4-7}
+	\multicolumn{3}{c}{}&
+	\multicolumn{4}{|c|}{\bfseries Vergleich}\\
+	\hline
+	\rule[-1ex]{0cm}{3.5ex}&
+		\multicolumn{2}{|c}{ Ga Einkristall}	&
+		\multicolumn{2}{|c||}{AuGa$_2$}&
+		AuIn$_2$	& In\\
+	\cline{2-7}
+	\rule[-1ex]{0cm}{3.5ex}&
+		$^{69}$Ga	& $^{71}$Ga	&
+		$^{69}$Ga	& $^{71}$Ga	&
+		$^{115}$In	& $^{115}$In\\
+	\hline\hline
+	\rule[-1ex]{0cm}{3.5ex}$\kappa$/[Ks]	& 1.008	& 0.630	& 1.030	& 0.720	& 0.10	& 0.09\\\hline
+	\rule[-1ex]{0cm}{3.5ex}T$_2$/[$\mu$s]	& 260	& 400	& ---	& 39.6	& 83	&$\approx$100\\
+	\hline
+		\multicolumn{1}{c}{}&
+	\multicolumn{4}{|c|}{\footnotesize(bei $T\approx5$mK und $B\approx0.1$T)}&
+	\multicolumn{2}{c}{}\\
+	\cline{2-5}
+	\end{tabular}$$
+
+Weiterführende Messungen könnten zur genaueren Bestimmung der Temperaturabhängigkeit der Korringa"=Konstante $\kappa$
+durchgeführt werden, da diese im Moment noch nicht geklärt ist. Eine andere mögliche Richtung der
+Fortführung dieser Experimente ist die Herstellung weiterer, mit einer definierten Verunreinigung
+versehener Proben, da ein Einfluß der Verunreinigungen auf das Verhalten der AuIn$_2$ Probe nicht
+auszuschließen ist.

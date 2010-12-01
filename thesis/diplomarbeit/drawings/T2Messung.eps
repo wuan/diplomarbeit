@@ -1,0 +1,1626 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Copyright: 1994-96 Soft-Logik Publishing Corp.
+%%Creator: PageStream3 (PostScript 1.0l)
+%%Title: T2Messung
+%%Copyright: Copyright 1998 Andreas Würl
+%CreationDate: 1998-2-22 10:9
+%%For: Andreas Würl
+%%BoundingBox:0 0 612 792
+%%Pages:
+%%DocumentFonts:
+%%DocumentNeededFonts:
+%%DocumentSuppliedFonts:
+%%EndComments
+%!PS-Adobe-3.0
+%%Copyright: 1994-96 Soft-Logik Publishing Corp.
+%%Creator: PageStream3 (PostScript 1.0j Beta.23)
+%%Title: platetest
+%%Copyright: 
+%CreationDate: 1996-8-28 18:44
+%%For: 
+%%BoundingBox:0 0 612 792
+%%Pages:
+%%DocumentFonts:
+%%DocumentNeededFonts:
+%%DocumentSuppliedFonts:
+%%EndComments
+%%BeginProlog
+% $VER: PostScript.prolog 1.1 (25.4.96)
+% fixed picstr problem in BeginRGBBitmap (7.10.94)
+% added font reencoding support (29.10.94)
+% complete change to fill/stroke for support for text (02.02.95)
+% fixed landscape to non-letter sizes
+% fixed grave/quotesingle encoding (15.02.95)
+% changed for new tm2d based code w/ new object calls (15.03.95)
+% fixed process color seps (24.03.95)
+% added PPDSetup/PPDCleanup (20.06.95)
+% now reencodes Courier for document name in slug (eeckk!) (09.07.95)
+% reencode dict increased by 2 (02.08.95)
+% recursive object tm (15.08.95)
+% prolog dict increased to 200 (01.09.95)
+% prolog rewrite of fill/stroke routines for text & added newpath to dograd/doradial/doshape (01.09.95)
+% new BeginClip/EndClip & BeginEPS/EndEPS (10.10.95)
+% new LNE/LNS line start & end routines (30.10.95)
+% moved LNE/LNS into ST (21.11.95)
+% fixed ST problem with y direction (18.01.96)
+% line ends no longer choke on zero length segments (28.3.96)
+% radial fills take offsets properly into account now (25.4.96)
+% RE nolonger reencodes Type42 fonts. Will later add a Type42 encoding vector to use (1.7.96)
+% added Type42 reencoding vector definition. (5.7.96)
+% added hack to get around LW8 font bug (23.7.96)
+% added overprint for plates & color, improved process/spot controls (28.8.96)
+% CMYK now sets text fill routines based on patterned or solid fills (17.3.97)
+
+%Copyright 1994-96 Soft-Logik Publishing Corp.
+
+/AsphaltDict dup 200 dict def load begin
+
+%
+% basic definitions
+%
+/dko true def
+/cko true def
+
+/bdef {bind def}bind def
+/xdef {exch def}bdef
+/ldef {load def}bdef
+/dmatrix matrix def
+/tmatrix matrix def
+/pmatrix matrix def
+
+/deltax 0 def
+/deltay 0 def
+/slant 0 def
+/twist 0 def
+/xscl 0 def
+/yscl 0 def
+/bang 0 def
+/eang 0 def
+
+/tilescalex 0 def
+/tilescaley 0 def
+/bh 0 def
+/bv 0 def
+
+%
+% fill defines
+%
+/SG /setgray ldef
+/PSfill /fill ldef
+/PSeofill /eofill ldef
+/PSstroke /stroke ldef
+/PSshow /show ldef
+/PSashow /ashow ldef
+/PSwidthshow /widthshow ldef
+/PSawidthshow /awidthshow ldef
+
+/fill {cko currentgray 1.0 ne or {PSfill}{newpath}ifelse} bdef
+/eofill {cko currentgray 1.0 ne or {PSeofill}{newpath}ifelse} bdef
+/stroke {cko currentgray 1.0 ne or {PSstroke}{newpath}ifelse} bdef
+/show {cko currentgray 1.0 ne or {PSshow}{stringwidth rmoveto}ifelse} bdef
+/ashow {cko currentgray 1.0 ne or {PSashow}{stringwidth rmoveto pop pop}ifelse} bdef
+/widthshow {cko currentgray 1.0 ne or {PSwidthshow}{stringwidth rmoveto pop pop pop pop}ifelse} bdef
+/awidthshow {cko currentgray 1.0 ne or {PSawidthshow}{stringwidth rmoveto pop pop pop pop pop}ifelse} bdef
+
+systemdict /setcmykcolor known not
+ {/SCMYK {1 sub 4 1 roll 3 {3 index add neg dup 0 lt{pop 0}if 3 1 roll}repeat setrgbcolor pop}bdef}
+ {/SCMYK /setcmykcolor ldef}ifelse
+
+%
+% drawing definitions
+%
+/sclm [0 0 0 0 0 0] def
+/scl{transform round .2 add exch round .2 add exch itransform}bdef
+
+%
+%
+%
+/PGSEncoding 256 array def
+% duplicates: acute, quoteleft, quoteright
+% 000-007
+/.notdef		/dotlessi		/grave			/acute			/circumflex		/tilde			/breve			/dotaccent
+% 010-017
+/ring			/hungarumlaut	/ogonek			/caron			/.notdef		/.notdef		/.notdef		/.notdef
+% 020-027
+/quotedblbase	/quotesinglbase	/quotesingle	/quoteleft		/quoteright		/.notdef		/.notdef		/.notdef
+% 030-037
+/.notdef		/.notdef		/.notdef		/.notdef		/.notdef		/.notdef		/.notdef		/.notdef
+% 040-047
+/space			/exclam			/quotedbl		/numbersign		/dollar			/percent		/ampersand		/quotesingle
+% 050-057
+/parenleft		/parenright		/asterisk		/plus			/comma			/hyphen			/period			/slash
+% 060-067
+/zero			/one			/two			/three			/four			/five			/six			/seven
+% 070-077
+/eight			/nine			/colon			/semicolon		/less			/equal			/greater		/question
+% 100-107
+/at				/A				/B				/C				/D				/E				/F				/G
+% 110-117
+/H				/I				/J				/K				/L				/M				/N				/O
+% 120-127
+/P				/Q				/R				/S				/T				/U				/V				/W
+% 130-137
+/X				/Y				/Z				/bracketleft	/backslash		/bracketright	/asciicircum	/underscore
+% 140-147
+/grave			/a				/b				/c				/d				/e				/f				/g
+% 150-157
+/h				/i				/j				/k				/l				/m				/n				/o
+% 160-167
+/p				/q				/r				/s				/t				/u				/v				/w
+% 170-177
+/x				/y				/z				/braceleft		/bar			/braceright		/asciitilde		/.notdef
+% 200-207
+/perthousand	/florin			/notequal		/infinity		/lessequal		/greaterequal	/.notdef		/.notdef
+% 210-217
+/ellipsis		/endash			/emdash			/quotedblleft	/quotedblright	/guilsinglleft	/guilsinglright	/pi				
+% 220-227
+/fraction		/dagger			/daggerdbl		/trademark		/bullet			/fi				/fl				/Ydieresis		
+% 230-237
+/Lslash			/lslash			/OE				/oe				/Scaron			/scaron			/Zcaron			/zcaron			
+% 240-247
+/space			/exclamdown		/cent			/sterling		/currency		/yen			/brokenbar		/section
+% 250-257
+/dieresis		/copyright		/ordfeminine	/guillemotleft	/logicalnot		/minus			/registered		/macron
+% 260-267
+/degree			/plusminus		/twosuperior	/threesuperior	/acute			/mu				/paragraph		/periodcentered
+% 270-277
+/cedilla		/onesuperior	/ordmasculine	/guillemotright	/onequarter		/onehalf		/threequarters	/questiondown
+% 300-307
+/Agrave			/Aacute			/Acircumflex	/Atilde			/Adieresis		/Aring			/AE				/Ccedilla
+% 310-317
+/Egrave			/Eacute			/Ecircumflex	/Edieresis		/Igrave			/Iacute			/Icircumflex	/Idieresis
+% 320-327
+/Eth			/Ntilde			/Ograve			/Oacute			/Ocircumflex	/Otilde			/Odieresis		/multiply
+% 330-337
+/Oslash			/Ugrave			/Uacute			/Ucircumflex	/Udieresis		/Yacute			/Thorn			/germandbls
+% 340-347
+/agrave			/aacute			/acircumflex	/atilde			/adieresis		/aring			/ae				/ccedilla
+% 350-357
+/egrave			/eacute			/ecircumflex	/edieresis		/igrave			/iacute			/icircumflex	/idieresis
+% 360-367
+/eth			/ntilde			/ograve			/oacute			/ocircumflex	/otilde			/odieresis		/divide
+% 370-377
+/oslash			/ugrave			/uacute			/ucircumflex	/udieresis		/yacute			/thorn			/ydieresis
+PGSEncoding 0 256 getinterval astore pop
+
+/PGS42Encoding 256 array def
+% 000-007
+/.notdef	/a215		/a67		/a141		/a216		/a97		/a219		/a220
+% 010-017
+/a221		/hungarumlaut	/a224		/a225	/.notdef	/.notdef	/.notdef	/.notdef
+% 020-027
+/a197		/a196		/a10		/a182		/a183		/.notdef	/.notdef	/.notdef
+% 030-037
+/.notdef	/.notdef	/.notdef	/.notdef	/.notdef	/.notdef	/.notdef	/.notdef
+% 040-047
+/a3			/a4			/a5			/a6			/a7			/a8			/a9			/a10
+% 050-057
+/a11		/a12		/a13		/a14		/a15		/a16		/a17		/a18
+% 060-067
+/a19		/a20		/a21		/a22		/a23		/a24		/a25		/a26
+% 070-077	
+/a27		/a28		/a29		/a30		/a31		/a32		/a33		/a34
+% 100-107
+/a35		/a36		/a37		/a38		/a39		/a40		/a41		/a42
+% 110-117
+/a43		/a44		/a45		/a46		/a47		/a48		/a49		/a50
+% 120-127
+/a51		/a52		/a53		/a54		/a55		/a56		/a57		/a58
+% 130-137
+/a59		/a60		/a61		/a62		/a63		/a64		/a65		/a66
+% 140-147
+/a67		/a68		/a69		/a70		/a71		/a72		/a73		/a74
+% 150-157
+/a75		/a76		/a77		/a78		/a79		/a80		/a81		/a82
+% 160-167
+/a83		/a84		/a85		/a86		/a87		/a88		/a89		/a90
+% 170-177
+/a91		/a92		/a93		/a94		/a95		/a96		/a97		/.notdef
+% 200-207
+/a198		/a156		/a143		/a146		/a148		/a149		/.notdef	/.notdef
+% 210-217
+/a171		/a178		/a179		/a180		/a181		/a190		/a191		/a154				
+% 220-227
+/a188		/a130		/a194		/a140		/a135		/a192		/a193		/a187		
+% 230-237
+/Lslash		/lslash		/a176		/a177		/Scaron		/scaron		/Zcaron		/zcaron			
+% 240-247
+/a3			/a163		/a132		/a133		/a189		/a150		/brokenbar	/a134
+% 250-257
+/a142		/a139		/a157		/a169		/a164		/minus		/a138		/a218
+% 260-267
+/a131		/a147		/twosuperior /threesuperior	/a141	/a151		/a136		/a195
+% 270-277
+/a222		/onesuperior /a158		/a170	/onequarter		/onehalf	/threequarters	/a162
+% 300-307
+/a173		/a201		/a199		/a174		/a98		/a99		/a144		/a100
+% 310-317
+/a203		/a101		/a200		/a202		/Igrave		/Iacute		/Icircumflex	/Idieresis
+% 320-327
+/Eth		/a102		/a211		/a208		/a209 		/a175		/a103		/multiply
+% 330-337
+/a145		/a214		/a212		/a213		/a104		/Yacute		/Thorn		/a137
+% 340-347
+/a106		/a105		/a107 		/a109		/a108		/a110		/a160		/a111
+% 350-357
+/a113		/a112		/a114 		/a115		/a117		/a116		/a118		/a119
+% 360-367
+/eth		/a120		/a122		/a121		/a123		/a125		/a124		/a184
+% 370-377
+/a161		/a127		/a126		/a129		/a129		/yacute		/thorn		/a186
+PGS42Encoding 0 256 getinterval astore pop
+
+%
+% path constructors
+%
+% - N -
+/N/newpath ldef
+
+% x y M -
+/M{scl moveto}bdef
+
+% x y L -
+/L{scl lineto}bdef
+
+% cx1 cy1 cx2 cy2 px2 py2 C -
+/C{scl 6 2 roll scl 6 2 roll scl 6 2 roll curveto}bdef
+
+% cx cy rx ry ba ea slant twist A -
+/A{matrix currentmatrix 9 1 roll /twist xdef/slant xdef/eang xdef/bang xdef/yscl xdef/xscl xdef scl translate xscl yscl scale sclm 0 twist cos put
+sclm 1 twist sin put sclm 2 slant sin neg put sclm 3 slant cos put sclm concat 0 0 1 bang eang arc setmatrix}bdef
+
+% cx cy rx ry ba ea slant twist AN -
+/AN{matrix currentmatrix 9 1 roll /twist xdef/slant xdef/eang xdef/bang xdef/yscl xdef/xscl xdef scl translate xscl yscl scale sclm 0 twist cos put
+sclm 1 twist sin put sclm 2 slant sin neg put sclm 3 slant cos put sclm concat 0 0 1 bang eang arcn setmatrix}bdef
+
+% - CP -
+/CP/closepath ldef
+
+%
+% pattern fill operators
+%
+% - patternpath -
+/patternpath{ %bdef
+  cko currentgray 1.0 ne or {
+
+  /mypatternfont findfont begin FontDict /ctm get setmatrix
+  currentdict setfont
+
+  FontDict begin
+    FontMatrix concat
+    width 0 dtransform
+    round width div exch round width div exch
+    0 height dtransform
+    round height div exch
+    round height div exch
+    0 0 transform round exch round exch
+    ptm astore setmatrix
+    pathbbox
+    height div ceiling height mul 4 1 roll
+    width div ceiling width mul 4 1 roll
+    height div floor height mul 4 1 roll
+    width div floor width mul 4 1 roll
+    2 index sub height div ceiling cvi exch
+    3 index sub width div ceiling cvi exch
+    4 2 roll moveto
+    FontMatrix ptm invertmatrix pop
+    { %repeat
+      gsave
+      ptm concat
+      dup str length idiv {str PSshow}repeat
+      dup str length mod str exch 0 exch getinterval PSshow
+      grestore
+      0 height rmoveto
+    }repeat
+    pop
+  end end
+  } if
+}bdef
+
+% - patternfill -
+/patternfill{ %bdef
+  gsave
+  1 setgray
+  fill
+  grestore
+
+  gsave
+  clip patternpath
+  grestore
+  newpath
+}bdef
+
+% - patterneofill -
+/patterneofill{ %bdef
+  gsave
+  1 setgray
+  eofill
+  grestore
+
+  gsave
+  eoclip patternpath
+  grestore
+  newpath
+}bdef
+
+% - patternstroke -
+/patternstroke{ %bdef
+  strokepath
+  gsave
+  1 setgray
+  eofill
+  grestore
+
+  gsave
+  clip patternpath
+  grestore
+  newpath
+}bdef
+
+% <pattern> P -
+/P{
+ /patterned true def
+ /pattern xdef
+ /mypatternfont findfont begin
+ FontDict begin
+ true
+  0 1 patterncount 1 sub {
+   dup patterns exch get pattern eq
+      {0 1 str length 1 sub{str exch 2 index put}for pop pop false exit}
+   if
+   pop
+ }for
+ {
+   patterns patterncount pattern put
+    0 1 str length 1 sub {str exch patterncount put}for
+   /patterncount patterncount 1 add def
+ }if
+ end
+ end
+ /FILL{patternfill}bdef
+ /EOFILL{patterneofill}bdef
+ /STROKE{patternstroke}bdef
+}bdef
+
+/S{
+ /patterned false def
+ /FILL{fill}bdef
+ /EOFILL{eofill}bdef
+ /STROKE{stroke}bdef
+}bdef
+
+%
+% gradient/radial/shape fill operators
+%
+/DOGRAD{
+ gsave
+ pmatrix setmatrix flattenpath exec 
+ pathbbox /ury xdef /urx xdef /lly xdef /llx xdef
+ angle 0 lt{/angle angle 360 add def}if
+ angle 180 gt{/angle angle 180 sub def tc1 tc2 /tc1 xdef /tc2 xdef}if
+ angle 90 gt{ /quad {ury exch sub}bdef tc1 tc2 /tc1 xdef /tc2 xdef}{ /quad {lly add}bdef}ifelse
+ /l urx llx sub def
+ /w ury lly sub def
+ /v angle dup 90 gt{90 sub neg 90 add}if dup sin l mul exch cos w mul add 2 mul def
+ /d angle dup 90 gt{90 sub neg 90 add}if dup sin w mul exch cos l mul add def
+ /steps d 72 div currentscreen pop pop mul cvi 1 add dup 256 gt{pop 256}if def
+ /dd d steps div def
+
+ 0 1 steps
+ {
+  steps div dup /frac xdef ramp /rfrac xdef
+  tc2 0 get tc1 0 get sub rfrac mul tc1 0 get add
+  tc2 1 get tc1 1 get sub rfrac mul tc1 1 get add
+  tc2 2 get tc1 2 get sub rfrac mul tc1 2 get add
+  tc2 3 get tc1 3 get sub rfrac mul tc1 3 get add scmyk
+
+  newpath gsave
+  l frac mul llx add
+  w frac mul quad translate angle rotate 
+  dd 2 div neg v 2 div neg moveto
+  0 v rlineto dd 0 rlineto 0 v neg rlineto closepath
+  FILL grestore
+ }for
+
+ grestore
+ newpath
+}bdef
+
+%
+%
+/DORADIAL{
+ gsave
+ pmatrix setmatrix flattenpath exec 
+ pathbbox /ury xdef /urx xdef /lly xdef /llx xdef
+ /xc llx urx add 2 div dx add def
+ /yc lly ury add 2 div dy add def
+ /radius llx xc sub dup mul lly yc sub dup mul add sqrt def
+ llx xc sub dup mul ury yc sub dup mul add sqrt dup radius gt {/radius xdef}{pop}ifelse
+ urx xc sub dup mul lly yc sub dup mul add sqrt dup radius gt {/radius xdef}{pop}ifelse
+ urx xc sub dup mul ury yc sub dup mul add sqrt dup radius gt {/radius xdef}{pop}ifelse
+
+ /steps radius 72 div currentscreen pop pop mul cvi 1 add dup 256 gt{pop 256}if def
+
+ steps -1 0
+ {
+  steps div dup /frac xdef ramp /rfrac xdef
+  tc2 0 get tc1 0 get sub rfrac mul tc1 0 get add
+  tc2 1 get tc1 1 get sub rfrac mul tc1 1 get add
+  tc2 2 get tc1 2 get sub rfrac mul tc1 2 get add
+  tc2 3 get tc1 3 get sub rfrac mul tc1 3 get add scmyk
+  newpath xc yc radius frac mul 0 360 arc FILL
+ }for
+
+ grestore
+ newpath
+}bdef
+
+%
+%
+/DOSHAPE{
+ /steps 30 def
+ /fillproc xdef
+
+ currentflat mark currentflat
+ {
+  {
+   dup setflat mark fillproc
+
+   tc1 0 get tc1 1 get tc1 2 get tc1 3 get scmyk
+   currentflat mark currentflat
+   {
+    dup setflat mark
+    {FILL}gsave stopped grestore {cleartomark 1.3 mul dup 100 gt {cleartomark setflat stop}if}{cleartomark exit}ifelse
+   }loop
+   cleartomark setflat
+
+   steps -1 0
+   {
+    steps div dup /frac xdef ramp /rfrac xdef
+    tc1 0 get tc2 0 get sub rfrac mul tc2 0 get add
+    tc1 1 get tc2 1 get sub rfrac mul tc2 1 get add
+    tc1 2 get tc2 2 get sub rfrac mul tc2 2 get add
+    tc1 3 get tc2 3 get sub rfrac mul tc2 3 get add scmyk
+    []0 setdash xc 2 mul frac mul setlinewidth
+
+    currentflat mark currentflat
+    {
+     dup setflat mark
+     {STROKE}gsave stopped grestore {cleartomark 1.3 mul dup 100 gt {cleartomark setflat stop}if}{cleartomark exit}ifelse
+    }loop
+    cleartomark setflat
+
+   }for
+  }
+%  gsave stopped grestore {cleartomark 1.3 mul dup 100 gt {cleartomark setflat stop}if}{cleartomark exit}ifelse
+  gsave stopped grestore {cleartomark 1.3 mul dup 100 gt {exit}if}{cleartomark exit}ifelse
+ }loop
+ cleartomark setflat
+ newpath
+}bdef
+
+%
+% join miterlimit cap [dashpattern] dashoffset width lnsfunc lnefunc ST -
+%
+/ST{
+ load /lnefunc xdef load /lnsfunc xdef 
+ setlinewidth setdash setlinecap 2 div sin 1 exch div setmiterlimit setlinejoin
+
+ /lnsfunc load /LENone load ne {
+  mark
+  /havestart 0 def
+  {havestart 2 eq {x2 x1 sub y1 y2 sub atan 90 add x1 y1 5 -2 roll}if /havestart 1 def /y1 xdef /x1 xdef} %moveto
+  {havestart 1 eq {/y2 xdef /x2 xdef x1 x2 ne y1 y2 ne or {/havestart 2 def}if}{pop pop}ifelse} %lineto
+  {havestart 1 eq {/py2 xdef /px2 xdef /cx2 xdef /cy2 xdef /y2 xdef /x2 xdef x1 x2 ne y1 y2 ne or
+	{/havestart 2 def}{x1 cx2 ne y1 cy2 ne or {/x2 cx2 def /y2 cy2 def /havestart 2 def}
+	{x1 px2 ne y1 py2 ne or {/x2 px2 def /y2 py2 def /havestart 2 def}if}
+	ifelse}ifelse}{pop pop pop pop pop pop}ifelse} %curveto
+  {/havestart 0 def} %closepath
+  pathforall
+  havestart 2 eq {x2 x1 sub y1 y2 sub atan 90 add x1 y1} if
+ }if
+
+ /lnefunc load /LENone load ne {
+  mark
+  /havestart 0 def
+  {havestart 2 eq {x2 x1 sub y1 y2 sub atan 90 add x1 y1 5 -2 roll}if /havestart 1 def /y1 xdef /x1 xdef} %moveto
+  {/py2 xdef /px2 xdef x1 px2 ne y1 py2 ne or {/x2 x1 def /y2 y1 def /x1 px2 def /y1 py2 def /havestart 2 def}if} %lineto
+  {/py2 xdef /px2 xdef /cy2 xdef /cx2 xdef /cy1 xdef /cx1 xdef
+    x1 cx1 ne y1 cy1 ne or {/x2 x1 def /y2 y1 def /x1 cx1 def /y1 cy1 def /havestart 2 def}if
+    x1 cx2 ne y1 cy2 ne or {/x2 x1 def /y2 y1 def /x1 cx2 def /y1 cy2 def /havestart 2 def}if
+    x1 px2 ne y1 py2 ne or {/x2 x1 def /y2 y1 def /x1 px2 def /y1 py2 def /havestart 2 def}if} %curveto
+  {/havestart 0 def} %closepath
+  pathforall
+  havestart 2 eq {x2 x1 sub y1 y2 sub atan 90 add x1 y1} if
+ }if
+
+ strokepath
+
+ /lnefunc load /LENone load ne {
+  counttomark 3 div cvi {matrix currentmatrix 4 1 roll translate rotate currentlinewidth dup scale lnefunc setmatrix} repeat pop
+ }if
+ /lnsfunc load /LENone load ne {
+  counttomark 3 div cvi {matrix currentmatrix 4 1 roll translate rotate currentlinewidth dup scale lnsfunc setmatrix} repeat pop
+ }if
+
+}bdef
+
+% fill functions
+
+%
+% screen spot functions
+%
+/SSNewDot {180 mul cos exch 180 mul cos add 2 div}bdef
+/SSDot {dup mul exch dup mul add 1.0 exch sub}bdef
+/SSRing {dup mul exch dup mul add 1.0 exch sub abs 1.0 exch sub}bdef
+/SSDonut {dup mul exch dup mul add sqrt .5 sub abs 1.0 exch sub}bdef
+/SSLine {exch pop abs}bdef
+/SSTriangle {2 exch sub exch abs 2 mul sub 3 div}bdef
+/SSPropeller {/y xdef /x xdef y x .001 add atan cvi 72 mod 72 sub abs 72 div y y mul x x mul add 1 exch sub add 2 div}bdef
+
+%
+% fountain blend functions
+%
+/FBLinear {}bdef
+/FBInvLinear {1 exch sub}bdef
+/FBLog {9 mul 1 add log}bdef
+/FBInvLog {9 mul 1 add log 1 exch sub}bdef
+/FBSin {180 mul sin}bdef
+/FBInvSin {180 mul sin 1 exch sub}bdef
+/FBSaw {2 mul dup 1 gt {2 exch sub}if}bdef
+/FBInvSaw {2 mul dup 1 gt {2 exch sub}if 1 exch sub}bdef
+
+%
+% line end functions
+%
+/LENone {}bdef
+/LERound {0 0 moveto 0 0 .5 -90 90 arc closepath}bdef
+/LEArrow {0 0 moveto 0 2 lineto 6 0 lineto 0 -2 lineto closepath}bdef
+/LEArrow1 {0 0 moveto 0 2 lineto 6 0 lineto 0 -2 lineto closepath}bdef
+/LEArrow2 {0 0 moveto -2 2 lineto 6 0 lineto -2 -2 lineto closepath}bdef
+/LEArrow3 {6 0 moveto -3 0 2.31 300 60 arc closepath}bdef
+/LEArrow4 {-1 0 moveto -4 2 .5 240 60 arcn 0 0 .5 60 300 arcn -4 -2 .5 300 120 arcn closepath}bdef
+/LESpike1 {0 .5 moveto .5 2 lineto 1 .5 lineto 6 0 lineto 1 -.5 lineto .5 -2 lineto 0 -.5 lineto closepath}bdef
+/LESpike2 {0 .5 moveto 2 2 lineto 6 0 lineto 2 -2 lineto 0 -.5 lineto closepath}bdef
+/LEFeather1 {-2 0 moveto 0 2 lineto 6 2 lineto 4 0 lineto 6 -2 lineto 0 -2 lineto closepath}bdef
+/LEFeather2 {0 -2 moveto 0 0 2 270 90 arcn 6 0 2 90 270 arc closepath}bdef
+/LEBox {-2 0 moveto -2 2 lineto 2 2 lineto 2 -2 lineto -2 -2 lineto closepath}bdef
+/LEDiamond {-2 0 moveto 0 2 lineto 2 0 lineto 0 -2 lineto closepath}bdef
+/LEBall {0 0 moveto 0 0 2 360 0 arcn closepath}bdef
+/LEEllipse {2 1 scale 0 0 moveto 0 0 2 360 0 arcn closepath}bdef
+
+%
+% freq angle spot SS -
+%
+/SS {
+ load setscreen
+}bdef
+
+%
+% text prototypes
+%
+% (string) F1 -
+% (string) kernamt F2 -
+% (string) skernamt F3 -
+% (string) skernamt kernamt F4 -
+%
+
+/FS{dup length 1 sub 0 exch 1 exch}bdef
+/Fx{1 index exch 1 getinterval dup currentpoint currentpoint newpath moveto 3 -1 roll false charpath FP moveto}bdef
+/Sx{1 index exch 1 getinterval dup currentpoint currentpoint newpath moveto 3 -1 roll false charpath SP moveto}bdef
+
+/S1{FS {Sx stringwidth rmoveto}for pop}bdef
+/S2{/dx xdef FS {Sx stringwidth rmoveto dx 0 rmoveto}for pop}bdef
+/S3{/dy xdef FS {Sx dup stringwidth rmoveto ( ) eq {dy 0 rmoveto}if}for pop}bdef
+/S4{/dy xdef /dx xdef FS {Sx dup stringwidth rmoveto dx 0 rmoveto ( ) eq {dy 0 rmoveto}if}for pop}bdef
+
+/CFx{
+ /F1{FS {Fx stringwidth rmoveto}for pop}bdef
+ /F2{/dx xdef FS {Fx stringwidth rmoveto dx 0 rmoveto}for pop}bdef
+ /F3{/dy xdef FS {Fx dup stringwidth rmoveto ( ) eq {dy 0 rmoveto}if}for pop}bdef
+ /F4{/dy xdef /dx xdef FS {Fx dup stringwidth rmoveto dx 0 rmoveto ( ) eq {dy 0 rmoveto}if}for pop}bdef
+}bdef
+
+%
+% c m y k CMYK -
+%
+/CMYK {
+ scmyk
+
+ /FP{FILL}bdef
+ /EP{EOFILL}bdef
+ /SP{STROKE}bdef
+
+ patterned {CFx}{
+ /F1{show}bdef
+ /F2{exch 0 exch ashow}bdef
+ /F3{exch 0 exch 32 exch widthshow}bdef
+ /F4{0 exch 32 exch 0 6 -1 roll awidthshow}bdef}ifelse
+}bdef
+
+%
+% angle /ramp [c1 m1 y1 k1][c2 m2 y2 k2] CMYKGRAD -
+%
+/CMYKGRAD{
+ /tc2 xdef
+ /tc1 xdef
+ /ramp exch ldef
+ /angle xdef
+
+ /FP{{clip} DOGRAD}bdef
+ /EP{{eoclip} DOGRAD}bdef
+ /SP{strokepath {clip} DOGRAD}bdef
+
+ CFx
+}bdef
+
+%
+% dx dy /ramp [c1 m1 y1 k1][c2 m2 y2 k2] CMYKRADIAL -
+%
+/CMYKRADIAL{
+ /tc2 xdef
+ /tc1 xdef
+ /ramp exch ldef
+ /dy xdef
+ /dx xdef
+
+ /FP{{clip} DORADIAL}bdef
+ /EP{{eoclip} DORADIAL}bdef
+ /SP{strokepath {clip} DORADIAL}bdef
+
+ CFx
+}bdef
+
+%
+% inset /ramp [c1 m1 y1 k1][c2 m2 y2 k2] CMYKSHAPE -
+%
+/CMYKSHAPE{
+ /tc2 xdef
+ /tc1 xdef
+ /ramp exch ldef
+ /xc xdef
+
+ /FP{{clip} DOSHAPE}bdef
+ /EP{{eoclip} DOSHAPE}bdef
+ /SP{strokepath {clip} DOSHAPE}bdef
+
+ CFx
+}bdef
+
+/O`{/dko false def /cko false def}bdef
+/K`{/dko true def /cko true def}bdef
+/o`{/cko false def}bdef
+/k`{dko{/cko true def}if}bdef
+
+/grayP{
+  /striptype 1 def
+  /scmyk{1 sub 4 1 roll 3{3 index add neg dup 0 lt{pop 0}if 3 1 roll}repeat setrgbcolor pop}bdef
+  /setgray /SG load def
+}bdef
+
+/colorP{
+  /striptype 2 def
+  /scmyk /SCMYK load def
+  /setgray /SG load def
+}bdef
+
+/cP{
+  /striptype 2 def
+  /scmyk {pop pop pop 1 exch sub SG}bdef
+  /setgray {pop 1 SG}bdef
+}bdef
+
+/mP{
+  /striptype 2 def
+  /scmyk {pop pop 1 exch sub SG pop}bdef
+  /setgray {pop 1 SG}bdef
+}bdef
+
+/yP{
+  /striptype 2 def
+  /scmyk {pop 1 exch sub SG pop pop}bdef
+  /setgray {pop 1 SG}bdef
+}bdef
+
+/kP{
+  /striptype 2 def
+  /scmyk {1 exch sub SG pop pop pop}bdef
+  /setgray /SG load def
+}bdef
+
+% spotname sP -
+/spotP{
+  /striptype 3 def
+  /spotname xdef
+
+%for now
+
+  /scmyk{1 sub 4 1 roll 3{3 index add neg dup 0 lt{pop 0}if 3 1 roll}repeat setrgbcolor pop}bdef
+  /setgray /SG load def
+
+%  /sepcolor xdef
+%
+%  /scmyk {
+%   sepcolor 3 get eq exch
+%   sepcolor 2 get eq and exch
+%   sepcolor 1 get eq and exch
+%   sepcolor 0 get eq and {0 SG}{1 SG}ifelse}bdef
+%  sepcolor 3 get 1 eq sepcolor 2 get 0 eq and sepcolor 1 get 0 eq and sepcolor 0 get 0 eq and {/setgray /SG load def}{/setgray {pop 1 SG}bdef}ifelse
+}bdef
+
+% freq angle setS -
+/setS{
+ dup type /stringtype eq {pop dangle}if exch dup type /stringtype eq {pop dfreq}if exch /dspot load setscreen
+ currentscreen /cspot xdef /cangle xdef /cfreq xdef
+}bdef
+
+%
+% #copies BEGINDOCUMENT -
+%
+/BeginDocument{
+ /#copies xdef
+
+  7 dict begin
+    /FontDict 12 dict def
+    FontDict begin
+      /key /mypatternfont def
+      /patterns 256 array def
+      /patterncount 0 def
+      /char 0 def
+      /mtx [300 72 div 0 0 300 72 div 0 0] matrix invertmatrix def
+      /height 30 def
+      /width 30 def
+      /ctm matrix currentmatrix def
+      /ptm matrix identmatrix def
+      /str 32 string def
+    end
+    /FontBBox [0 0 FontDict /width get FontDict /height get] def
+    /FontMatrix FontDict /mtx get def
+    /Encoding 256 array 0 1 255 {1 index exch dup 3 string cvs cvn put}for def
+    /FontType 3 def
+    /BuildChar { %def
+      exch begin
+      FontDict begin
+      /char xdef
+       width 0 0 0 width height setcachedevice
+      width height scale 8 8 true [8 0 0 -8 0 8] {patterns char get}imagemask
+      end end
+    }def
+    FontDict /key get currentdict definefont pop
+  end
+
+ /dmatrix dmatrix currentmatrix def
+ currentscreen /dspot xdef /dangle xdef /dfreq xdef
+
+}bdef
+
+%
+% /newfontname /fontname RE -
+%
+/RE{
+ mark {FontDirectory 3 index get} stopped
+ {cleartomark
+  findfont dup length 2 add dict begin {1 index /FID ne {def}{pop pop}ifelse}forall
+  /FontType load 42 eq {/Encoding PGS42Encoding def}{/Encoding PGSEncoding def}ifelse
+  /FontName 1 index def
+  currentdict definefont pop
+  end
+ }
+ {cleartomark pop pop}ifelse
+}bdef
+
+%
+% /fontname xscale yscale slant twist F -
+%
+/F{
+ /twist xdef /slant xdef /yscale xdef /xscale xdef
+ findfont [xscale 0 0 yscale 0 0] [twist cos twist sin slant sin neg slant cos 0 0] sclm concatmatrix makefont setfont
+}bdef
+
+%
+% - ENDOCUMENT -
+%
+/EndDocument{% fixes printing extra page with GX
+userdict /restore {pop /showpage {} def} bind put
+}bdef
+
+%
+% tilew tileh landscape scaleh scalex paperw paperh BEGINTILE -
+%
+/BeginTile{
+ 2 div exch 2 div exch translate
+ /tilescaley xdef /tilescalex xdef tilescalex tilescaley scale
+ {90 rotate} if
+ -2 div exch -2 div exch translate
+
+ /tmatrix tmatrix currentmatrix def
+}bdef
+
+%
+% - ENDTILE -
+%
+/EndTile{
+ dmatrix setmatrix
+}bdef
+
+%
+% title left top right bottom THUMBNAILMARKS -
+%
+/ThumbnailMarks{
+ /tiley2 xdef
+ /tilex2 xdef
+ /tiley1 xdef
+ /tilex1 xdef
+ /title1 xdef
+
+ tmatrix setmatrix
+ .5 SG [] 0 setdash 6 setlinewidth 0 setlinejoin 0 setlinecap
+ newpath
+ tilex1 3 add tiley2 3 sub moveto
+ tilex2 3 add tiley2 3 sub lineto
+ tilex2 3 add tiley1 3 sub lineto PSstroke
+
+ 0 SG .3 setlinewidth
+ newpath tilex1 tiley1 moveto tilex2 tiley1 lineto tilex2 tiley2 lineto tilex1 tiley2 lineto closepath PSstroke
+
+ gsave tilex1 tilex2 add 2 div tiley2 translate 1 tilescalex div 1 tilescaley div scale -2 -6 bv sub translate
+ /PGSCourier/Courier RE /PGSCourier findfont 6 scalefont setfont
+ 0 0 moveto title1 PSshow
+ grestore
+}bdef
+
+%
+% left top "BeginPage"
+%
+/BeginPage{
+ tmatrix setmatrix translate 
+ /pmatrix pmatrix currentmatrix def
+}bdef
+
+%
+% "EndPage"
+%
+/EndPage{
+ tmatrix setmatrix
+}bdef
+
+/PPDSetup{countdictstack mark}bdef
+/PPDCleanup{stopped cleartomark countdictstack exch sub dup 0 gt{{end}repeat}{pop}ifelse}bdef
+
+%
+% - "BO" matrix
+%
+/BO{
+ matrix currentmatrix
+}bdef
+
+%
+% slant twist "r" -
+%
+/r{
+ /twist xdef
+ /slant xdef
+
+ sclm 0 twist cos put sclm 1 twist sin put sclm 2 slant sin neg put sclm 3 slant cos put sclm concat
+}bdef
+
+%
+% aboutx abouty slant twist "R" -
+%
+/r'{
+ /twist xdef
+ /slant xdef
+ /deltay xdef
+ /deltax xdef
+
+ deltax deltay translate
+ sclm 0 twist cos put sclm 1 twist sin put sclm 2 slant sin neg put sclm 3 slant cos put sclm concat
+ deltax neg deltay neg translate
+}bdef
+
+%
+% hscale vscale "s" -
+%
+/s{scale}bdef
+
+%
+% xoffset1 yoffset1 hscale vscale xoffset2 yoffset2 "S" -
+%
+/s'{translate scale neg exch neg exch translate}bdef
+
+%
+% xoffset yoffset "t" -
+%
+/t{translate}bdef
+
+%
+% matrix "EO" -
+%
+/EO {setmatrix}bdef
+
+%
+% - BEGINCLIP -
+%
+/BeginClip {gsave clip}bdef
+
+%
+% - ENDCLIP -
+%
+/EndClip {grestore}bdef
+
+%
+% xscale yscale xoffset yoffset pixelw pixelh bitsperpixel BEGINBITMAP -
+%
+/BeginBitmap {
+ save 8 1 roll /bpp xdef /h xdef /w xdef
+ scl translate scale /picstr 8 bpp idiv dup w add 1 sub exch idiv string def
+ w h bpp [w 0 0 h neg 0 h] {currentfile picstr readhexstring pop}bind image
+}bdef
+
+%
+% xscale yscale xoffset yoffset pixelw pixelh bitsperpixel BEGINRGBBITMAP -
+%
+/BeginRGBBitmap {
+ save 8 1 roll /bpp xdef /h xdef /w xdef
+ scl translate scale /picstr 8 bpp idiv dup w 3 mul add 1 sub exch idiv string def
+ w h bpp [w 0 0 h neg 0 h] {currentfile picstr readhexstring pop}bind false 3 colorimage
+}bdef
+
+%
+% - ENDBITMAP -
+%
+/EndBitmap {restore}bdef
+
+%
+% xscalex yscale xoffset yoffset BEGINEPS -
+%
+/BeginEPS {
+ scl translate scale translate
+ /PGSEPSSave save def
+ /showpage {}bdef
+ /dict_count countdictstack def /op_count count 1 sub def
+ userdict begin
+ newpath 0 setgray 1 setlinewidth [] 0 setdash 0 setlinecap 0 setlinejoin 10 setmiterlimit
+ /languagelevel where {pop languagelevel 1 ne {false setstrokeadjust false setoverprint}if }if
+}bdef
+
+%
+% - ENDEPS -
+%
+/EndEPS {count op_count sub {pop} repeat countdictstack dict_count sub {end} repeat PGSEPSSave restore}bdef
+
+%
+% angle cx cy cropmark -
+%
+/cropmark {
+  gsave translate 1 tilescalex div 1 tilescaley div scale rotate
+  .3 setlinewidth newpath
+  bh 5 add 0 moveto 20 0 rlineto
+  0 bv 5 add moveto 0 20 rlineto
+  PSstroke grestore
+}bdef
+
+%
+% dx dy cx cy regmark -
+%
+/regmark {
+  gsave translate 1 tilescalex div 1 tilescaley div scale translate
+  .3 setlinewidth newpath
+  10 0 moveto 0 0 10 0 360 arc
+  1 SG PSfill
+  8 0 moveto 0 0 8 0 360 arc
+  -10 0 moveto 10 0 lineto 0 -10 moveto 0 10 lineto
+  0 SG PSstroke
+  4 0 moveto 0 0 4 0 360 arc
+  PSfill
+  -4 0 moveto 4 0 lineto 0 -4 moveto 0 4 lineto
+  1 SG PSstroke
+  grestore
+}bdef
+
+%
+% dx dy cx cy slurgauge -
+%
+/slurgauge {
+  gsave translate 1 tilescalex div 1 tilescaley div scale translate
+  .3 setlinewidth newpath
+  0 0 10 0 360 arc
+  1 SG PSfill
+  0 0 10 0 360 arc
+  0 SG PSstroke
+  36 { 1 0 moveto 0 0 10 -2.5 2.5 arc PSfill 10 rotate}repeat
+  grestore
+}bdef
+
+/boxit {newpath moveto 14 0 rlineto 0 -14 rlineto -14 0 rlineto closepath}def
+
+%
+% angle dx dy cx cy colorstrip -
+%
+/colorstrip {
+  gsave translate 1 tilescalex div 1 tilescaley div scale translate rotate
+
+  /PGSCourier/Courier RE /PGSCourier findfont 6 scalefont setfont
+
+  striptype 1 eq {
+    0 8 translate
+    0 1 9 {dup 15 mul 0 boxit 10 div SG PSfill}for
+   }if
+
+  striptype 2 eq {
+    gsave 320 15 translate
+    0 0 boxit .5 .41 .41 0 scmyk PSfill
+    15 0 boxit 0 0 0 .5 scmyk PSfill
+    30 0 boxit 1 1 0 0 scmyk PSfill
+    45 0 boxit 1 0 1 0 scmyk PSfill
+    60 0 boxit 0 1 1 0 scmyk PSfill
+    75 0 boxit 1 1 1 0 scmyk PSfill
+    1 SG
+    33 -6 moveto (CM) PSshow
+    48 -6 moveto (CY) PSshow
+    63 -6 moveto (MY) PSshow
+    77 -6 moveto (CMY) PSshow
+    grestore
+
+
+    0 0 0 1 scmyk -6 9 moveto (K) PSshow
+    0 1 9 {dup 15 mul 15 boxit 10 div 0 0 0 4 -1 roll scmyk PSfill}for
+
+    1 0 0 0 scmyk -6 -6 moveto (C) PSshow
+    0 1 9 {dup 15 mul 0 boxit 10 div 0 0 0 scmyk PSfill}for
+
+    0 1 0 0 scmyk 154 9 moveto (M) PSshow
+    0 1 9 {dup 15 mul 160 add 15 boxit 10 div 0 exch 0 0 scmyk PSfill}for
+
+    0 0 1 0 scmyk 154 -6 moveto (Y) PSshow
+    0 1 9 {dup 15 mul 160 add 0 boxit 10 div 0 0 3 -1 roll 0 scmyk PSfill}for
+
+   }if
+
+  striptype 3 eq {
+    320 0 translate
+    0 1 9 {dup 15 mul 0 boxit 10 div SG PSfill}for
+   }if
+
+  grestore
+}def
+
+%
+% title1 title2 tilew tileh PRINTERSMARKS -
+%
+/PrintersMarks {
+ /tileh xdef
+ /tilew xdef
+ /title2 xdef
+ /title1 xdef
+
+ gsave 0 SG [] 0 setdash 0 setlinejoin 0 setlinecap
+
+ 180 0 0 cropmark
+ 270 tilew 0 cropmark
+ 0 tilew tileh cropmark
+ 90 0 tileh cropmark
+
+ 0 15 bv add tilew 2 div tileh regmark
+ 0 -15 bv sub tilew 2 div 0 regmark
+
+ -15 bh sub -15 bv sub 0 0 slurgauge
+ 15 bh add 15 bv add tilew tileh slurgauge
+
+  gsave 1 tilescalex div 1 tilescaley div scale -15 bh sub 8 translate 90 rotate
+  /PGSCourier/Courier RE /PGSCourier findfont 8 scalefont setfont
+  0 0 moveto title1 PSshow
+  0 -8 moveto title2 PSshow (  ) PSshow
+  currentscreen pop exch 20 string cvs PSshow ( lpi  ) PSshow
+  20 string cvs PSshow (\260  ) PSshow
+  tilescalex 100 mul 20 string cvs PSshow (%) PSshow
+  tilescaley tilescalex ne {(,) PSshow tilescaley 100 mul 20 string cvs PSshow (%) PSshow}if
+  grestore
+
+ 90 bh 15 add 15 tilew 0 colorstrip
+ grestore
+}bdef
+
+% hack around the @#!%$^% laserwriter8 driver bug
+/*def/def load def
+/def {1 index/fcheckload eq{pop{pop pop}}if *def}bdef
+
+end
+%%EndProlog
+%%BeginSetup
+/endp{}def
+AsphaltDict begin
+%%EndSetup
+%Begin Document: T2Messung
+1 BeginDocument
+%%Page: 1
+%%BeginPageSetup
+K` grayP (DEFAULT) (DEFAULT) setS 612 792 false 1 1 612 792 BeginTile
+%%EndPageSetup
+0 0 BeginPage
+EndPage
+0 0 BeginPage
+BO
+190.086 76.711 0 0 r'
+BO
+-0 790.924 1 1 0 159.422 s'
+BO
+187.086 654.18 0 0 r'
+N
+165.18 648.31 M
+165.18 648.31 L
+168.046 637.611 178.881 630.372 189.85 631.722 C
+200.819 633.072 209.763 643.105 209.763 654.18 C
+cfreq cangle /cspot SS
+0 11 0 []0 1 /LEArrow3 /LENone ST
+S k` 0 1 1 0 CMYK
+FP
+EO
+BO
+45.353 654.18 0 0 r'
+N
+67.258 660.049 M
+67.258 660.049 L
+64.702 669.592 55.232 676.858 45.352 676.857 C
+0 11 0 []0 1 /LEArrow3 /LENone ST
+k` 0 1 1 0 CMYK
+FP
+EO
+BO
+45.353 744.889 0 0 r'
+N
+36.85 773.235 M
+53.857 773.235 L
+53.857 716.542 L
+36.85 716.542 L
+CP
+k` 0 0 0 0.4 CMYK
+EP
+EO
+BO
+187.086 744.889 0 0 r'
+N
+170.078 773.235 M
+204.094 773.235 L
+204.094 716.542 L
+170.078 716.542 L
+CP
+k` 0 0 0 0.4 CMYK
+EP
+EO
+BO
+351.495 744.889 0 0 r'
+BO
+N
+328.818 759.062 M
+337.322 751.978 354.301 744.895 374.172 744.895 C
+354.33 744.895 337.322 737.811 328.818 730.727 C
+k` 0 0 0 0.4 CMYK
+EP
+EO
+EO
+BO
+306.141 744.889 0 180 r'
+BO
+N
+283.464 759.062 M
+291.968 751.978 308.947 744.895 328.818 744.895 C
+308.976 744.895 291.968 737.811 283.464 730.727 C
+k` 0 0 0 0.4 CMYK
+EP
+EO
+EO
+BO
+76.535 744.889 0 0 r'
+BO
+N
+53.857 761.897 M
+62.361 753.393 79.341 744.889 99.212 744.889 C
+79.369 744.889 62.361 736.385 53.857 727.881 C
+k` 0 0 0 0.4 CMYK
+EP
+EO
+EO
+BO
+187.086 654.18 0 0 r'
+N
+187.086 654.18 M
+172.508 645.494 L
+181.462 641.737 195.427 642.243 203.399 646.447 C
+211.37 650.65 211.37 657.71 203.399 661.913 C
+195.428 666.117 181.766 666.544 172.813 662.866 C
+CP
+k` 0 /FBLinear [0 0 0 0.3 ][0 0 0 0.7 ]CMYKGRAD
+EP
+N
+172.508 645.494 M
+172.508 645.494 L
+181.462 641.737 195.427 642.243 203.399 646.447 C
+211.37 650.65 211.37 657.71 203.399 661.913 C
+195.428 666.117 181.766 666.544 172.813 662.866 C
+0 11 0 []0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+257.952 654.18 0 180 r'
+N
+257.952 654.18 M
+265.708 643.525 L
+274.441 645.114 280.629 649.534 280.629 654.18 C
+280.629 658.827 274.441 663.246 265.708 664.835 C
+CP
+k` 0 /FBInvLinear [0 0 0 0.3 ][0 0 0 0.7 ]CMYKGRAD
+EP
+N
+265.708 643.525 M
+265.708 643.525 L
+274.441 645.114 280.629 649.534 280.629 654.18 C
+280.629 658.827 274.441 663.246 265.708 664.835 C
+0 11 0 []0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+116.22 654.18 0 0 r'
+N
+116.22 654.18 M
+123.976 643.525 L
+132.709 645.114 138.897 649.534 138.897 654.18 C
+138.897 658.827 132.709 663.246 123.976 664.835 C
+CP
+k` 0 /FBLinear [0 0 0 0.3 ][0 0 0 0.7 ]CMYKGRAD
+EP
+N
+123.976 643.525 M
+123.976 643.525 L
+132.709 645.114 138.897 649.534 138.897 654.18 C
+138.897 658.827 132.709 663.246 123.976 664.835 C
+0 11 0 []0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+59.527 668.353 0 0 r'
+BO
+N
+45.353 682.527 M
+45.353 654.18 L
+73.7 654.18 L
+0 11 0 []0 0.5 /LEArrow /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+EO
+BO
+130.393 668.353 0 0 r'
+BO
+N
+116.22 682.527 M
+116.22 654.18 L
+144.566 654.18 L
+0 11 0 []0 0.5 /LEArrow /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+EO
+BO
+201.259 668.353 0 0 r'
+BO
+N
+187.086 682.527 M
+187.086 654.18 L
+215.432 654.18 L
+0 11 0 []0 0.5 /LEArrow /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+EO
+BO
+272.125 668.353 0 0 r'
+BO
+N
+257.952 682.527 M
+257.952 654.18 L
+286.298 654.18 L
+0 11 0 []0 0.5 /LEArrow /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+EO
+BO
+116.22 654.18 0 0 r'
+N
+138.897 654.18 M
+138.897 654.18 L
+138.897 660.332 128.521 665.519 116.218 665.519 C
+103.915 665.518 93.54 660.332 93.541 654.18 C
+93.542 648.028 103.916 642.841 116.22 642.841 C
+128.524 642.841 138.897 648.029 138.897 654.18 C
+CP
+0 11 0 [4 4 ]0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+45.353 654.18 0 0 r'
+N
+68.031 654.18 M
+68.031 654.18 L
+68.031 660.332 57.655 665.519 45.352 665.519 C
+33.049 665.518 22.674 660.332 22.675 654.18 C
+22.676 648.028 33.049 642.841 45.353 642.841 C
+57.658 642.841 68.031 648.029 68.031 654.18 C
+CP
+0 11 0 [4 4 ]0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+187.086 654.18 0 0 r'
+N
+209.763 654.18 M
+209.763 654.18 L
+209.763 660.332 199.388 665.519 187.084 665.519 C
+174.781 665.518 164.406 660.332 164.407 654.18 C
+164.408 648.028 174.782 642.841 187.086 642.841 C
+199.39 642.841 209.763 648.029 209.763 654.18 C
+CP
+0 11 0 [4 4 ]0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+257.952 654.18 0 0 r'
+N
+280.629 654.18 M
+280.629 654.18 L
+280.629 660.332 270.254 665.519 257.95 665.519 C
+245.647 665.518 235.273 660.332 235.273 654.18 C
+235.274 648.028 245.648 642.841 257.952 642.841 C
+270.256 642.841 280.629 648.029 280.629 654.18 C
+CP
+0 11 0 [4 4 ]0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+342.991 668.353 0 0 r'
+BO
+N
+328.818 682.527 M
+328.818 654.18 L
+357.164 654.18 L
+0 11 0 []0 0.5 /LEArrow /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+EO
+BO
+328.818 654.18 0 0 r'
+N
+351.495 654.18 M
+351.495 654.18 L
+351.495 660.332 341.12 665.519 328.817 665.519 C
+316.513 665.518 306.139 660.332 306.139 654.18 C
+306.14 648.028 316.514 642.841 328.818 642.841 C
+341.122 642.841 351.495 648.029 351.495 654.18 C
+CP
+0 11 0 []0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+55.275 654.18 0 0 r'
+N
+45.353 654.18 M
+65.196 654.18 L
+0 11 0 []0 1 /LENone /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+321.732 654.18 0 180 r'
+N
+314.646 654.18 M
+328.819 654.18 L
+0 11 0 []0 1 /LENone /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+192.755 744.889 0 0 r'
+N
+11.338 744.889 M
+374.172 744.889 L
+0 11 0 []0 1 /LENone /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+116.22 654.18 0 0 r'
+N
+121.142 640.222 M
+121.142 640.222 L
+125.722 640.625 130.877 641.827 134.44 643.322 C
+0 11 0 []0 0.5 /LEArrow /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+187.086 654.18 0 0 r'
+N
+170.826 642.569 M
+170.826 642.569 L
+174.636 641.236 179.98 640.263 184.613 640.06 C
+0 11 0 []0 0.5 /LEArrow /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+257.952 654.18 0 180 r'
+N
+257.952 640.006 M
+257.952 640.006 L
+262.603 640.006 268.097 640.742 272.125 641.905 C
+0 11 0 []0 0.5 /LENone /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+45.353 733.55 0 0 r'
+N
+45.353 778.905 M
+45.353 688.196 L
+0 11 0 [8 3 2 3 ]0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+187.086 740.637 0 0 r'
+N
+187.086 778.905 M
+187.086 702.369 L
+0 11 0 [8 3 2 3 ]0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+328.818 733.55 0 0 r'
+N
+328.818 778.905 M
+328.818 688.196 L
+0 11 0 [8 3 2 3 ]0 0.5 /LENone /LENone ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+116.22 710.873 0 0 r'
+N
+48.188 710.873 M
+184.251 710.873 L
+0 11 0 []0 0.5 /LEArrow /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+187.086 696.7 0 0 r'
+N
+48.188 696.7 M
+325.983 696.7 L
+0 11 0 []0 0.5 /LEArrow /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+45.353 784.924 0 0 r'
+/PGSTimes-Roman/Times-Roman RE
+/PGSTimes-Roman 10 10 0 0 F
+k` 0 0 0 1 CMYK
+27.902 781.324 M (90\260-Pul) 0.05 F2 (s) F1
+EO
+BO
+187.086 784.895 0 0 r'
+k` 0 0 0 1 CMYK
+167.109 781.295 M (180\260-Pul) 0.05 F2 (s) F1
+EO
+BO
+328.818 784.895 0 0 r'
+k` 0 0 0 1 CMYK
+307.512 781.295 M (Spin-Ech) 0.05 F2 (o) F1
+EO
+BO
+108.377 706.29 0 0 r'
+/Symbol 10 10 0 0 F
+k` 0 0 0 1 CMYK
+106.185 702.69 M (t) F1
+EO
+BO
+173.857 692.117 0 0 r'
+k` 0 0 0 1 CMYK
+169.142 688.517 M (2) 0.05 F2 (t) F1
+EO
+BO
+48.419 686.127 0 0 r'
+/PGSTimes-Italic/Times-Italic RE
+/PGSTimes-Italic 6 6 0 0 F
+k` 0 0 0 1 CMYK
+47.253 683.967 M (z) F1
+EO
+BO
+76.364 651.232 0 0 r'
+k` 0 0 0 1 CMYK
+75.032 649.072 M (x) F1
+EO
+BO
+119.286 686.127 0 0 r'
+k` 0 0 0 1 CMYK
+118.119 683.967 M (z) F1
+EO
+BO
+190.152 686.127 0 0 r'
+k` 0 0 0 1 CMYK
+188.985 683.967 M (z) F1
+EO
+BO
+261.018 686.127 0 0 r'
+k` 0 0 0 1 CMYK
+259.851 683.967 M (z) F1
+EO
+BO
+331.884 686.127 0 0 r'
+k` 0 0 0 1 CMYK
+330.717 683.967 M (z) F1
+EO
+BO
+147.23 651.232 0 0 r'
+k` 0 0 0 1 CMYK
+145.898 649.072 M (x) F1
+EO
+BO
+218.096 651.232 0 0 r'
+k` 0 0 0 1 CMYK
+216.764 649.072 M (x) F1
+EO
+BO
+288.962 651.232 0 0 r'
+k` 0 0 0 1 CMYK
+287.631 649.072 M (x) F1
+EO
+BO
+359.828 651.232 0 0 r'
+k` 0 0 0 1 CMYK
+358.497 649.072 M (x) F1
+EO
+BO
+17.007 744.889 0 0 r'
+N
+17.007 710.873 M
+17.007 778.905 L
+0 11 0 []0 1 /LENone /LEArrow ST
+k` 0 0 0 1 CMYK
+FP
+EO
+BO
+378.453 739.541 0 0 r'
+/PGSTimes-Italic 10 10 0 0 F
+k` 0 0 0 1 CMYK
+377.064 735.941 M (t) F1
+EO
+BO
+6 771.965 90 90 r'
+/PGSTimes-Roman 10 10 0 0 F
+k` 0 0 0 1 CMYK
+-6.903 768.365 M (Signa) 0.05 F2 (l) F1
+EO
+EO
+EO
+EndPage
+showpage
+EndTile
+%%PageTrailer
+EndDocument
+%EndDocument: T2Messung
+%%Trailer
+end
+%%EOF

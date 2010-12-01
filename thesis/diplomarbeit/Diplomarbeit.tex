@@ -1,0 +1,132 @@
+%
+% Datei: Studium/Diplomarbeit.tex
+%
+% Begonnen am: 18/01/97
+%
+\documentclass[twoside,12pt,a4paper]{report}
+%\nofiles
+
+\usepackage[latin1]{inputenc}
+\usepackage[english,german]{babel}
+\usepackage[T1]{fontenc}
+
+% Computer Concrete Fonts verwenden
+%\usepackage{ccfonts}
+%\usepackage{em}
+\usepackage{times}
+
+\usepackage{typearea}\typearea[2cm]{14}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage[dvips]{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{caption}
+\renewcommand{\captionlabelfont}{\small\upshape\bfseries}
+\renewcommand{\captionfont}{\small\slshape}
+\usepackage{showkeys}
+%\usepackage{showkeys}
+
+\bibliographystyle{geralpha}
+
+\makeatletter
+
+\renewcommand\tiny{
+   \@setfontsize\normalsize\@xivpt{18}%
+   \abovedisplayskip 14\p@ \@plus3\p@ \@minus7\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}
+\renewcommand\small{%
+   \@setfontsize\normalsize\@xiipt{14.5}%
+   \abovedisplayskip 12\p@ \@plus3\p@ \@minus7\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}
+\renewcommand\footnotesize{%
+   \@setfontsize\small\@xipt{13.6}%
+   \abovedisplayskip 11\p@ \@plus3\p@ \@minus6\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 9\p@ \@plus3\p@ \@minus5\p@
+               \parsep 4.5\p@ \@plus2\p@ \@minus\p@
+               \itemsep \parsep}%
+   \belowdisplayskip \abovedisplayskip
+}
+
+\normalsize
+\makeatother
+
+% Vektoren werden fett geschrieben
+\renewcommand{\vec}{\bm}
+
+\newcommand{\siehe}{\ensuremath{\nearrow}}
+
+% Häufig benötigte Worte/Floskeln
+%\newcommand{\aug}{\ifmmode{\mathrm{AuGa}_2}\else{AuGa$_2$}\fi}
+\newcommand{\aug}{{AuGa\ensuremath{_2}}}
+%\newcommand{\ga}{\ifmmode{^{69}\mathrm{Ga}}\else{$^69$Ga}\fi}
+\newcommand{\ga}{{\ensuremath{^69}Ga}}
+%\newcommand{\gb}{\ifmmode{^{71}\mathrm{Ga}}\else{$^71$Ga}\fi}
+\newcommand{\gb}{{\ensuremath{^71}Ga}}
+\newcommand{\Ha}{\ensuremath{{\cal H}}}
+\newcommand{\K}{\ensuremath{{\cal K}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Bildbreiten:
+\newlength{\ssmallwidth}
+\setlength{\ssmallwidth}{0.5\textwidth}
+\newlength{\smallwidth}
+\setlength{\smallwidth}{0.6\textwidth}
+\newlength{\midwidth}
+\setlength{\midwidth}{0.7\textwidth}
+\newlength{\bigwidth}
+\setlength{\bigwidth}{0.8\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% quer: Setzt Strich "uber #1
+\newcommand{\quer}[1]{\overline{#1}}
+% ul: Unterstreicht #1
+\newcommand{\ul}[1]{\ensuremath{\underline{\mathrm{#1}}}}
+
+% Text in Formeln mit Raum vor (\beforetext) und nach (\aftertext) dem Text
+\newcommand{\beforetext}{\quad}
+\newcommand{\aftertext}{\quad}
+\newcommand{\ttext}[1]{\beforetext\text{#1}} % Abstand nur vorher
+\newcommand{\textt}[1]{\text{#1}\aftertext}  % Abstabd nur nachher
+\newcommand{\ttextt}[1]{\beforetext\text{#1}\aftertext} % Abstand vor- und nachher
+
+% "Betrag": schlie"st #1 in angepasste Striche | ein
+\newcommand{\abs}[1]{\left\lvert \smash[t]{#1} \right\rvert}
+
+% \log-like
+\DeclareMathOperator{\Spur}{Spur}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\includeonly{Experimente}
+
+\sloppy
+
+\hyphenation{Abs-zis-sen-wert-te}
+
+\begin{document}
+
+\nocite{Abragam,Abragam2,HakenWolf1,HakenWolf2,Kittel,Gerthsen,Slichter,POBELL,Metallic,Girgl,ESKA89,BAEUML,ESKA86,
+	Maenne_PhD,koerber91,herrmannsdoerfer96,Stephan_Dis,PhDS} 
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1ex}
+
+\tableofcontents
+\include{Einleitung}
+\include{Theorie}
+\include{Experimente}
+\include{Anhang}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
