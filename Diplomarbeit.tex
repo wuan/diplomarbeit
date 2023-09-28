@@ -6,18 +6,18 @@
 \documentclass[twoside,12pt,a4paper]{report}
 %\nofiles
 
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[english,german]{babel}
 \usepackage[T1]{fontenc}
 
 % Computer Concrete Fonts verwenden
 %\usepackage{ccfonts}
 %\usepackage{em}
-\usepackage{times}
+%\usepackage{times}
 
 \usepackage{typearea}\typearea[2cm]{14}
 \usepackage{amsmath}
-%\usepackage{bm}
+\usepackage{bm}
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{float}
@@ -28,7 +28,7 @@
 %\usepackage{showkeys}
 \usepackage{bibgerm}
 
-\usepackage[subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
+%\usepackage[subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
 
 \bibliographystyle{geralpha}
 
@@ -64,7 +64,9 @@
 \makeatother
 
 % Vektoren werden fett geschrieben
-\renewcommand{\vec}{\mathbold}
+\renewcommand{\vec}{\bm}
+% use the following with mtpro2 fonts
+%\renewcommand{\vec}{\mathbold}
 
 \newcommand{\siehe}{\ensuremath{\nearrow}}
 
@@ -72,9 +74,9 @@
 %\newcommand{\aug}{\ifmmode{\mathrm{AuGa}_2}\else{AuGa$_2$}\fi}
 \newcommand{\aug}{{AuGa\ensuremath{_2}}}
 %\newcommand{\ga}{\ifmmode{^{69}\mathrm{Ga}}\else{$^69$Ga}\fi}
-\newcommand{\ga}{{\ensuremath{^69}Ga}}
+\newcommand{\ga}{{\ensuremath{^{69}}Ga}}
 %\newcommand{\gb}{\ifmmode{^{71}\mathrm{Ga}}\else{$^71$Ga}\fi}
-\newcommand{\gb}{{\ensuremath{^71}Ga}}
+\newcommand{\gb}{{\ensuremath{^{71}}Ga}}
 \newcommand{\Ha}{\ensuremath{{\cal H}}}
 \newcommand{\K}{\ensuremath{{\cal K}}}
 
@@ -125,6 +127,8 @@
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1ex}
 
+\include{Titel}
+\setcounter{page}{1}
 \tableofcontents
 \include{Einleitung}
 \include{Theorie}
