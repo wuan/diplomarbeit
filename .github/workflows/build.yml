@@ -22,7 +22,8 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install dependencies
-        run: sudo apt install fig2dev texlive-font-utils
+#        run: sudo apt install fig2dev texlive-font-utils
+        run: sudo apt install fig2dev
       - name: Create drawings
         run: make
       - name: LaTeX iterations
