@@ -1,7 +1,12 @@
-pics   = kryo.eps gradlinform.eps relax_transition.eps
+pics = kryo.pdf gradlinform.pdf relax_transition.pdf
 
-$(pics): %.eps: %.fig
+all: $(pics)
+
+$(pics): %.pdf: %.fig
 	fig2dev -L eps $< $(addsuffix .eps, $(basename $@))
+	epstopdf $(addsuffix .eps, $(basename $@))
+	rm $(addsuffix .eps, $(basename $@))
+
 
 clean:
 	rm -f $(pics)
