@@ -38,7 +38,7 @@ jobs:
           echo "EOF" >> $GITHUB_ENV
         continue-on-error: true
       - name: Upload PDF
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Diplomarbeit
           path: Diplomarbeit.pdf
