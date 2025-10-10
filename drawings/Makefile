@@ -7,4 +7,4 @@ $(pics): %.eps: %.fig
 
 
 clean:
-	rm -f $(pics)
+	rm -f $(pics) *-eps-converted-to.pdf
