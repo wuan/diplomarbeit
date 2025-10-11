@@ -31,6 +31,7 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Diplomarbeit.tex
+          os: debian
       - name: Collect Warnings
         id: warnings
         run: |
