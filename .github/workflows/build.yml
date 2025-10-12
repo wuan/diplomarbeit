@@ -34,28 +34,28 @@ jobs:
           compiler: pdflatex
         continue-on-error: true
       - name: LaTeX iterations
-        id: latex-final
+        id: latex-final2
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Diplomarbeit.tex
           compiler: pdflatex
         continue-on-error: true
       - name: LaTeX iterations
-        id: latex-final2
+        id: latex-final3
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Diplomarbeit.aux
           compiler: bibtex
         continue-on-error: true
       - name: LaTeX iterations
-        id: latex-final3
+        id: latex-final4
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Diplomarbeit.tex
           compiler: pdflatex
         continue-on-error: true
       - name: LaTeX iterations
-        id: latex-final4
+        id: latex-final5
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Diplomarbeit.tex
