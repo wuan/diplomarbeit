@@ -40,6 +40,11 @@ jobs:
           grep "^LaTeX Warning" Diplomarbeit.log | cut -d" " -f3- | tee -a $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
         continue-on-error: true
+      - name: Upload Data
+        uses: actions/upload-artifact@v4
+        with:
+          name: Project
+          path: .
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
