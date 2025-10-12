@@ -31,8 +31,34 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Diplomarbeit.tex
-          texlive_version: 2024
-          os: debian
+          compiler: pdflatex
+        continue-on-error: true
+      - name: LaTeX iterations
+        id: latex-final
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Diplomarbeit.tex
+          compiler: pdflatex
+        continue-on-error: true
+      - name: LaTeX iterations
+        id: latex-final
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Diplomarbeit.aux
+          compiler: bibtex
+        continue-on-error: true
+      - name: LaTeX iterations
+        id: latex-final
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Diplomarbeit.tex
+          compiler: pdflatex
+        continue-on-error: true
+      - name: LaTeX iterations
+        id: latex-final
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Diplomarbeit.tex
           compiler: pdflatex
         continue-on-error: true
       - name: Collect Warnings
