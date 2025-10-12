@@ -33,6 +33,7 @@ jobs:
           root_file: Diplomarbeit.tex
           texlive_version: 2024
           os: debian
+          compiler: pdflatex
         continue-on-error: true
       - name: Collect Warnings
         id: warnings
