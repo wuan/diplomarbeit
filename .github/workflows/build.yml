@@ -46,6 +46,7 @@ jobs:
         with:
           root_file: Diplomarbeit.aux
           compiler: bibtex
+          args: ""
         continue-on-error: true
       - name: LaTeX iterations
         id: latex-final4
