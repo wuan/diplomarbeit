@@ -22,7 +22,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install dependencies
-#        run: sudo apt install fig2dev texlive-font-utils
         run: sudo apt install fig2dev
       - name: Create drawings
         run: make
@@ -31,7 +30,6 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Diplomarbeit.tex
-        continue-on-error: true
       - name: Collect Warnings
         id: warnings
         run: |
